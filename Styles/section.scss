@@ -1,0 +1,38 @@
+@mixin create-section($id, $background-color, $header-color, $standard-color, $accent-color, $section-height, $section-max-height)
+{
+     ##{$id}
+     {
+        background-color: $background-color;
+        width: 100%;
+        min-height: $section-height;
+        max-height: $section-max-height;
+        overflow: hidden;
+        color: $standard-color;
+
+        .font-accent
+        {
+            color: $accent-color;
+        }
+
+        .border-accent
+        {
+            border-color: $accent-color;
+        }
+
+        .background-accent
+        {
+            background-color: $accent-color;
+        }
+
+        &.center-text
+        {
+            text-align: center;
+        }
+
+        h1
+        {
+            color: $header-color;
+        }
+
+     }
+}
