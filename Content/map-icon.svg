@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="34" viewBox="0 0 20 34">
+  <defs>
+    <image id="image" width="20" height="34" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAMAAABodAmPAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABJlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAADcuI+zAAAAYHRSTlMADDpQSikCSLr87JMdE7D2bBXXjATEaG30+/MZA+WmJgZS4YZBlhvo3HoRuyiOvCUhag5n+AUxmRfjAawtCFTfeJT+RNnmfocew1ha6YOB+qqjN8K3TEPVzGBW3nXtgBDQtrgyAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAARNJREFUKM9l0udWAjEQBeC7CjbsAoqwEhtYsGNDFMXee0EF5v2fws0kGxOYP7n5cnaSnCygyuvojES7YFd3Ty8F1RfrNzQwSGENDWsbGSWrxtjiCXIqKXFcTyZSapxMAxmf41QWYnqG4ywwx2GeO+XyMi8Ai/yJp/ZUrZYQk8OyPkiUsYAVOaxqXGNcxwbvvKlwS06K29jhxV22vX2ZE0CJAx2UcXhU4XgcLJ/owxerOhQCPHVvSWeyUebcxQtuf+lY9Yox62B4j2sbbzTeWnYnNIr8P96bR3owlsoZTD+G+GQ98XOILxaWtb06f8ObwncHP9g+Sw7iS2LNNXwH5osWjP8Q/aK1klT32lD4DbRXrWniHyMTfrZIlg6aAAAAAElFTkSuQmCC"/>
+  </defs>
+  <use id="Warstwa_1" data-name="Warstwa 1" xlink:href="#image"/>
+  <use id="Warstwa_2" data-name="Warstwa 2" xlink:href="#image"/>
+</svg>
