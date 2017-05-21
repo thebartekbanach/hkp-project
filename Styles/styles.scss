@@ -1,6 +1,7 @@
 @import 'bootstrap.min';
 @import 'section-triangle';
 @import 'section';
+@import 'button';
 
 .container-fluid
 {
@@ -15,3 +16,8 @@
 @include create-section(services, #93278f, white, white, #fbb03b, 550px, 50vh);
 @include create-section(realization, #fafafa, #4b2778, white, white, 550px, 50vh);
 @include create-section(contact, #c92d6b, white,white, #ac104f, 350px, 50vh);
+
+@include create-button-style(e-mail, path-to-image);
+@include create-button-style(map, path-to-image);
+@include create-button-style(contact-with-us, path-to-image);
+@include create-button-style(facebook, path-to-image);

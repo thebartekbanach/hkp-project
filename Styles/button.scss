@@ -1,0 +1,31 @@
+
+
+@mixin create-button-style($id, $icon-image)
+{
+
+    .e-mail
+    {
+        background-position: center;
+        background-attachment: static;
+        background-repeat: no-repeat;
+        background-image: url("Content/envelope-icon.png");
+    }
+
+    button
+    {
+        border-radius: 50%;
+        border: none;
+        width:70px;
+        height: 70px;
+        border-radius: none;
+        background-color: #ac104f; 
+        outline:none !important;   
+
+    }
+    button:hover
+    {
+        background-color: #e25b91; 
+    }
+
+
+}
