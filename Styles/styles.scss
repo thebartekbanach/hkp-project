@@ -10,7 +10,6 @@
 }
 
 @include create-section-triangle-style(page-header, #fafafa, 35px, 50px);
-@include create-section(header, #8e6f90, white, white, white, 600px, 60vh);
 @include create-section(what-we-do, #fafafa, #c54c82, #111111,white, 400px, 50vh);
 @include create-section(services, #93278f, white, white, #fbb03b, 550px, 50vh);
 @include create-section(realization, #fafafa, #4b2778, white, white, 550px, 50vh);

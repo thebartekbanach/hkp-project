@@ -1,13 +1,24 @@
-@mixin create-section($id, $background-color, $header-color, $standard-color, $accent-color, $section-height, $section-max-height)
+@mixin create-section(
+    $id, $background-color, 
+    $header-color, $standard-color, $accent-color, 
+    $section-height, $section-max-height)
 {
      ##{$id}
      {
         background-color: $background-color;
         width: 100%;
-        min-height: $section-height;
-        max-height: $section-max-height;
         overflow: hidden;
         color: $standard-color;
+
+        @if $section-height != null
+        {
+            min-height: $section-height;
+        }
+
+        @if $section-max-height != null
+        {
+            max-height: $section-max-height;
+        }
 
         .font-accent
         {
@@ -35,4 +46,62 @@
         }
 
      }
+}
+
+@mixin create-section-with-bgimage(
+    $id, $background-color, $header-color, 
+    $standard-color, $accent-color, $section-height, 
+    $section-max-height, $image-src, $image-width, $correction-value)
+{
+    ##{$id}
+    {
+        background-color: $background-color;
+        width: 100%;
+        overflow: hidden;
+        color: $standard-color;
+        position: relative;
+
+        height: $section-height;
+        max-height: $section-max-height;
+
+
+        .font-accent
+        {
+            color: $accent-color;
+        }
+
+        .border-accent
+        {
+            border-color: $accent-color;
+        }
+
+        .background-accent
+        {
+            background-color: $accent-color;
+        }
+
+        &.center-text
+        {
+            text-align: center;
+        }
+
+        h1
+        {
+            color: url($header-color);
+        }
+
+        background-image: url($image-src);
+        background-repeat: no-repeat;
+        background-attachment: static;
+        background-position: center; 
+        background-size: 100% auto;
+
+        
+        @media screen and (max-width: ($image-width / 2 + $correction-value))
+        {
+            background-size: auto 100%;
+        }
+
+            
+    }
 }
