@@ -2,6 +2,7 @@
 @import 'section-triangle';
 @import 'section';
 @import 'button';
+@import 'footer';
 
 .container-fluid
 {
@@ -11,14 +12,16 @@
 }
 
 @include create-section-triangle-style(page-header, #fafafa, 35px, 50px);
-@include create-section-with-bgimage(header, #8e6f90, white, white, white, 600px, 90vh, "Content/Header.jpg", 1819px, 17);
-@include create-section(what-we-do, #fafafa, #c54c82, #111111,white, 400px, 50vh);
-@include create-section(services, #93278f, white, white, #fbb03b, 550px, 50vh);
-@include create-section(realization, #fafafa, #4b2778, white, white, 550px, 50vh);
+@include create-section-with-bgimage(header, arial, #8e6f90, white, white, white, 600px, 90vh, "Content/Header.jpg", 1819px, 17);
+@include create-section(what-we-do, arial, #fafafa, #c54c82, #111111,white, 400px, 50vh);
+@include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, 50vh);
+@include create-section(realization, comic, #fafafa, #4b2778, white, white, 550px, 50vh);
 
-@include create-section(contact, #c92d6b, white,white, #ac104f, 350px, 50vh){
+@include create-section(contact,arial, #c92d6b, white,white, #ac104f, 350px, 50vh){
     @include create-button-style(e-mail);
     @include create-button-style(map);
     @include create-button-style(contact-with-us);
     @include create-button-style(facebook);
 }
+
+@include setup-footer(50px, whitesmoke, #532e75);

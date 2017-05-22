@@ -1,14 +1,20 @@
 @mixin create-section(
-    $id, $background-color, 
+    $id, $font, $background-color, 
     $header-color, $standard-color, $accent-color, 
     $section-height, $section-max-height)
 {
      section##{$id}
      {
-        background-color: $background-color;
+         background-color: $background-color;
         width: 100%;
         overflow: hidden;
         color: $standard-color;
+        position: relative;
+
+        @if $font != null
+        {
+            font-family: $font;
+        }
 
         text-align: center;
         display: flex;
@@ -56,47 +62,12 @@
 }
 
 @mixin create-section-with-bgimage(
-    $id, $background-color, $header-color, 
+    $id, $font, $background-color, $header-color, 
     $standard-color, $accent-color, $section-height, 
     $section-max-height, $image-src, $image-width, $correction-value)
 {
-    section##{$id}
+    @include create-section($id, $font, $background-color, $header-color, $standard-color, $accent-color, $section-height, $section-max-height)
     {
-        background-color: $background-color;
-        width: 100%;
-        overflow: hidden;
-        color: $standard-color;
-        position: relative;
-
-        height: $section-height;
-        max-height: $section-max-height;
-
-
-        .font-accent
-        {
-            color: $accent-color;
-        }
-
-        .border-accent
-        {
-            border-color: $accent-color;
-        }
-
-        .background-accent
-        {
-            background-color: $accent-color;
-        }
-
-        &.center-text
-        {
-            text-align: center;
-        }
-
-        h1
-        {
-            color: url($header-color);
-        }
-
         background-image: url($image-src);
         background-repeat: no-repeat;
         background-attachment: static;
@@ -108,7 +79,5 @@
         {
             background-size: auto 100%;
         }
-
-            
-    }
+    }   
 }
