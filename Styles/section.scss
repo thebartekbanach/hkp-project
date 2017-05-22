@@ -3,12 +3,18 @@
     $header-color, $standard-color, $accent-color, 
     $section-height, $section-max-height)
 {
-     ##{$id}
+     section##{$id}
      {
         background-color: $background-color;
         width: 100%;
         overflow: hidden;
         color: $standard-color;
+
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         @if $section-height != null
         {
@@ -35,16 +41,17 @@
             background-color: $accent-color;
         }
 
-        &.center-text
-        {
-            text-align: center;
-        }
-
         h1
         {
             color: $header-color;
         }
 
+        p
+        {
+            margin:30px;
+        }
+
+        @content;
      }
 }
 
@@ -53,7 +60,7 @@
     $standard-color, $accent-color, $section-height, 
     $section-max-height, $image-src, $image-width, $correction-value)
 {
-    ##{$id}
+    section##{$id}
     {
         background-color: $background-color;
         width: 100%;
