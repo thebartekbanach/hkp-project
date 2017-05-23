@@ -25,4 +25,10 @@
     @include create-button-style(facebook);
 }
 
+div#google-map
+{
+    width: 100%;
+    height: 350px;
+}
+
 @include setup-footer(50px, whitesmoke, #532e75);
