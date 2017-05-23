@@ -35,7 +35,7 @@
     }
 }
  
-@include create-section(contact,arial, #c92d6b, white,white, #ac104f, 100px, 50vh){
+@include create-section(contact,arial, #c92d6b, white,white, #ac104f, 100px, null){
     @include create-button-style(e-mail);
     @include create-button-style(map-btn);
     @include create-button-style(contact-with-us);
