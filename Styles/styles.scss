@@ -4,6 +4,7 @@
 @import 'section';
 @import 'button';
 @import 'footer';
+@import 'thumbnail-gallery';
 
 .container-fluid
 {
@@ -16,9 +17,25 @@
 @include create-section-with-bgimage(header, arial, #8e6f90, white, white, white, 600px, 90vh, "Content/Header.jpg", 1819px, 11);
 @include create-section(what-we-do, arial, #fafafa, #c54c82, #111111,white, 400px, 50vh);
 @include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, 50vh);
-@include create-section(realization, comic, #fafafa, #4b2778, white, white, 550px, 50vh);
+@include create-section(realization, arial, #fafafa, #4b2778, white, white, 550px, null){
+    @include thumbnail(thumbnail-v, vertical);
+    @include thumbnail(thumbnail-h, horizontal);
+    padding-bottom:100px;
 
-@include create-section(contact,arial, #c92d6b, white,white, #ac104f, 350px, 50vh){
+    div.fixpadding
+    {
+        padding: 1px;
+        margin: 0;
+    }
+
+    h1
+    {
+        margin-bottom: 40px;
+        margin-top: 10px; 
+    }
+}
+ 
+@include create-section(contact,arial, #c92d6b, white,white, #ac104f, 100px, 50vh){
     @include create-button-style(e-mail);
     @include create-button-style(map-btn);
     @include create-button-style(contact-with-us);

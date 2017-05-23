@@ -5,7 +5,9 @@
 {
      section##{$id}
      {
-         background-color: $background-color;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-color: $background-color;
         width: 100%;
         overflow: hidden;
         color: $standard-color;
