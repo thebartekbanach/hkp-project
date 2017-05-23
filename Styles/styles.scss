@@ -1,3 +1,4 @@
+@import 'tether.min';
 @import 'bootstrap.min';
 @import 'section-triangle';
 @import 'section';
@@ -19,7 +20,7 @@
 
 @include create-section(contact,arial, #c92d6b, white,white, #ac104f, 350px, 50vh){
     @include create-button-style(e-mail);
-    @include create-button-style(map);
+    @include create-button-style(map-btn);
     @include create-button-style(contact-with-us);
     @include create-button-style(facebook);
 }
