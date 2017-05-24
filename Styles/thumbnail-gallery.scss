@@ -2,6 +2,7 @@
 {
     .#{$name}
     {
+        display: block;
         position: relative;
 	    width: 100%;		/* desired width */
         @if $style == vertical
