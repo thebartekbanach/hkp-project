@@ -5,6 +5,8 @@
 @import 'button';
 @import 'footer';
 @import 'thumbnail-gallery';
+@import 'font-element';
+@import 'font-face';
 
 .container-fluid
 {
@@ -20,6 +22,8 @@
 @include create-section(realization, arial, #fafafa, #4b2778, white, white, 550px, null){
     @include thumbnail(thumbnail-v, vertical);
     @include thumbnail(thumbnail-h, horizontal);
+    @include set-font-for-element(h1, Lato-Regular, selector);
+
     padding-bottom:100px;
 
     div.fixpadding
@@ -33,6 +37,7 @@
         margin-bottom: 40px;
         margin-top: 10px; 
     }
+
 }
  
 @include create-section(contact,arial, #c92d6b, white,white, #ac104f, 100px, null){
@@ -40,6 +45,9 @@
     @include create-button-style(map-btn);
     @include create-button-style(contact-with-us);
     @include create-button-style(facebook);
+    @include set-font-for-element(h1, Lato-Regular, selector);
+    @include set-font-for-element(p, Lato-Italic, selector);
+    
 }
 
 div#google-map
@@ -49,3 +57,8 @@ div#google-map
 }
 
 @include setup-footer(50px, whitesmoke, #532e75);
+
+@include font-face(Lato-Light, Content/fonts/Lato/Lato-Light);
+@include font-face(Lato-Regular, Content/fonts/Lato/Lato-Regular);
+
+

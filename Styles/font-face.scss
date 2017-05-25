@@ -38,28 +38,3 @@
 		src: $src;
 	}
 }
-
-@mixin set-font-for-element($element-name, $element-class, $font-name)
-{
-    @if($element-class == null)
-    {
-        #{$element-name}
-        {
-            font-family: $font-name;
-        }
-    }
-    @else if($element-class != null && $element-name != null)
-    {
-        #{$element-name}.#{$element-class}
-        {
-            font-family: $font-name;
-        }
-    }
-    @else if($element-class != null)
-    {
-        #{$element-class}
-        {
-            font-family: $font-name;
-        }
-    }
-}

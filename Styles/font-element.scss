@@ -1,0 +1,29 @@
+@mixin set-font-for-element($element-name, $font-name, $type)
+{
+
+    @if $type == selector
+    {
+        #{$element-name}
+        {
+            font-family: $font-name;
+        }
+    }
+
+    @if type == class
+    {
+        .#{$element-name}
+        {
+            font-family: $font-name;
+        }
+    }
+
+    @if type == id
+    {
+        ##{$element-name}
+        {
+            font-family: $font-name;
+        }
+    }
+    
+
+}
