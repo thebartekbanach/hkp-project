@@ -1,7 +1,7 @@
 @mixin set-font-for-element($element-name, $font-name, $type)
 {
 
-    @if $type == selector
+    @if $type == element
     {
         #{$element-name}
         {
