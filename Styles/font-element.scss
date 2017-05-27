@@ -9,7 +9,7 @@
         }
     }
 
-    @if type == class
+    @if $type == class
     {
         .#{$element-name}
         {
@@ -17,7 +17,7 @@
         }
     }
 
-    @if type == id
+    @if $type == id
     {
         ##{$element-name}
         {
