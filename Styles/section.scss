@@ -65,7 +65,7 @@
 
 @mixin create-section-with-bgimage(
     $id, $font, $background-color, $header-color, 
-    $standard-color, $accent-color, $section-height, 
+    $standard-color, $accent-color, $section-height, $title-height, 
     $section-max-height, $image-src, $image-width, $correction-value)
 {
     @include create-section($id, $font, $background-color, $header-color, $standard-color, $accent-color, $section-height, $section-max-height)
@@ -76,6 +76,15 @@
         background-position: center; 
         background-size: 110% auto;
 
+        @if $title-height != null
+        {
+            h1
+            {
+                margin-top: $section-height / 2 - $title-height / 2;
+                margin-bottom: $section-height / 2 - $title-height / 2;
+                line-height: $title-height;
+            }
+        }
         
         @media screen and (max-width: ($image-width / 2 + $correction-value))
         {
