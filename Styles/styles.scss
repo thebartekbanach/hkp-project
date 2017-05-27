@@ -7,7 +7,12 @@
 @import 'thumbnail-gallery';
 @import 'font-element';
 @import 'font-face';
-@import 'toogle-animation';
+@import 'navbar';
+
+@include font-face(Lato-Light, Content/fonts/Lato/Lato-Light);
+@include font-face(Lato-Regular, Content/fonts/Lato/Lato-Regular);
+@include font-face(BonvenoCF-Light, Content/fonts/BonvenoCF/BonvenoCF-Light);
+
 
 .container-fluid
 {
@@ -17,13 +22,32 @@
 }
 
 @include create-section-triangle-style(page-header, #fafafa, 35px, 50px);
-@include create-section-with-bgimage(header, arial, #8e6f90, white, white, white, 600px, null, "Content/Header.jpg", 1819px, 11)
+@include create-section-with-bgimage(header, arial, #8e6f90, white, white, white, 600px, 130px, null, "Content/Header.jpg", 1819px, 11)
 {
+    @include create-navbar(navbar, white, #ff2fb3);
+    @include set-font-for-element(h1, BonvenoCF-Light, element);
+    @include set-font-for-element(a, Lato-Light, element);
+    padding-top:0px;
+    
+    display: block;
+    h1
+    {
+        text-align: left;
+        display: block;
+        width: 100%;
+        padding-left:40px;
+        padding-right: 40px;
+        padding-bottom: 4px;
+        background-color: red;
+        background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)); /*Standard*/
+        font-size: 3em;
+
+    }
 }
 @include create-section(what-we-do, arial, #fafafa, #c54c82, #111111,white, 350px, null)
 {
     @include set-font-for-element(h1, Lato-Regular, element);
-    @include set-font-for-element(p, Lato-Italic, element);
+    @include set-font-for-element(p, Lato-Light, element);
     h1
     {
         font-size: 40px;
@@ -38,37 +62,7 @@
 }
 @include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, 50vh)
 {
-    .column
-    {
-        border-top: 2px solid white;
-        border-bottom: 2px solid red;
-        background-color: blue;
-
-        .short-desc
-        {
-            @include inject-show-animation(1s, 1s);
-        }
-
-        .long-desc
-        {
-            @include inject-hide-animation(1s);
-        }
-        
-        &:hover
-        {
-            .short-desc
-            {
-                @include inject-hide-animation(1s);
-            }
-
-            .long-desc
-            {
-                @include inject-show-animation(1s, 1s);
-            }
-        }
-    }
-
-    
+  
 }
 
 @include create-section(realization, arial, #fafafa, #4b2778, white, white, 550px, null){
@@ -98,8 +92,8 @@
     @include create-button-style(map-btn);
     @include create-button-style(contact-with-us);
     @include create-button-style(facebook);
-    @include set-font-for-element(h1, Lato-Regular, selector);
-    @include set-font-for-element(p, Lato-Italic, selector);
+    @include set-font-for-element(h1, Lato-Regular, element);
+    @include set-font-for-element(p, Lato-Light, element);
     
     p
     {
@@ -118,8 +112,5 @@ div#google-map
 }
 
 @include setup-footer(50px, whitesmoke, #532e75);
-
-@include font-face(Lato-Light, Content/fonts/Lato/Lato-Light);
-@include font-face(Lato-Regular, Content/fonts/Lato/Lato-Regular);
 
 
