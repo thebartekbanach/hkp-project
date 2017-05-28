@@ -1,5 +1,6 @@
 function initMap() {
     var street = {lat: 53.611746, lng: 21.831979};
+    var image = 'Content/buttons/map-btn-color.png';
 
     var map = new google.maps.Map(document.getElementById('google-map'), {
         zoom: 16,
