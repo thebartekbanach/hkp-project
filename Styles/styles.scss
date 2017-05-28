@@ -8,6 +8,7 @@
 @import 'font-element';
 @import 'font-face';
 @import 'navbar';
+@import 'toogle-animation';
 
 @include font-face(Lato-Light, Content/fonts/Lato/Lato-Light);
 @include font-face(Lato-Regular, Content/fonts/Lato/Lato-Regular);
