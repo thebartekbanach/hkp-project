@@ -8,6 +8,7 @@
 @import 'font-element';
 @import 'font-face';
 @import 'navbar';
+@import 'toogle-animation';
 
 @include font-face(Lato-Light, Content/fonts/Lato/Lato-Light);
 @include font-face(Lato-Regular, Content/fonts/Lato/Lato-Regular);
@@ -62,7 +63,35 @@
 }
 @include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, 50vh)
 {
-  
+    .column
+    {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        overflow: hidden;
+        .short-desc
+        {
+            @include inject-show-animation(0.3s);
+        }
+
+        .long-desc
+        {
+            @include inject-hide-animation(0.3s);
+            
+        }
+        
+        &:hover
+        {
+            .short-desc
+            {
+                @include inject-hide-animation(0.3s);
+            }
+
+            .long-desc
+            {
+                @include inject-show-animation(0.3s);
+            }
+        }
+    }
 }
 
 @include create-section(realization, arial, #fafafa, #4b2778, white, white, 550px, null){

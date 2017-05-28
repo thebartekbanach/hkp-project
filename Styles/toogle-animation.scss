@@ -1,0 +1,95 @@
+@keyframes hide-animation
+{
+    0% {transform: scaleY(1);line-height: 30px;}
+    25% {transform: scaleY(1);line-height: 30px;}
+    50% {transform: scaleY(0);line-height: 0px;}
+    100% {transform: scaleY(0); line-height: 0px;}
+}
+
+@keyframes show-animation
+{
+    0% {transform: scaleY(0);line-height: 0px;}
+    50% {transform: scaleY(0);line-height: 0px;}
+    100% {transform: scaleY(1);line-height: 30px;}
+}
+
+@mixin inject-hide-animation($time, $delay: null)
+{
+        animation-name: hide-animation;
+        animation-duration: $time;
+        animation-fill-mode: forwards;
+        
+        @if $delay != null
+        {
+            //animation-delay: $delay;
+        }
+
+        @content;
+}
+
+@mixin inject-show-animation($time, $delay: null)
+{
+        animation-name: show-animation;
+        animation-duration: $time;
+        animation-fill-mode: forwards;
+        
+            
+        @if $delay != null
+        {
+            //animation-delay: $delay;
+        }
+        
+        @content;
+}
+
+/*
+@keyframes hide-animation
+{
+    0% {transform: scaleY(1);line-height: 15px;}
+    25% {transform: scaleY(1);line-height: 15px;}
+    50% {transform: scaleY(0);line-height: 0px;}
+    100% {transform: scaleY(0); line-height: 0px;}
+}
+
+@keyframes show-animation
+{
+    0% {transform: scaleY(0);line-height: 0px;}
+    50% {transform: scaleY(0);line-height: 0px;}
+    100% {transform: scaleY(1);line-height: 15px;}
+}
+
+@mixin create-hs-animation($line-height)
+{
+    
+}
+
+@mixin inject-hide-animation($time, $delay: null)
+{
+        animation-name: hide-animation;
+        animation-duration: $time;
+        animation-fill-mode: forwards;
+        
+        @if $delay != null
+        {
+            //animation-delay: $delay;
+        }
+
+        @content;
+}
+
+@mixin inject-show-animation($time, $delay: null)
+{
+        animation-name: show-animation;
+        animation-duration: $time;
+        animation-fill-mode: forwards;
+        
+            
+        @if $delay != null
+        {
+            //animation-delay: $delay;
+        }
+        
+        @content;
+}
+ 
+ */
