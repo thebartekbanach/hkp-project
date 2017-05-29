@@ -6,20 +6,22 @@
     {
         position: absolute;
         right: 0;
-        top:20px;
+        top:25px;
         list-style-type: none;
+        margin-right: 20px;
 
         li
         {
             display: inline;
-            float: right;
+            
             a
             {
                 text-decoration: none;
                 color: $color;
-                margin-right: 45px;
                 transition: all 0.3s;
                 font-size: 1.1em;
+                padding: 22px;
+
                 &:hover
                 {
                     transition: all 0.3s;
