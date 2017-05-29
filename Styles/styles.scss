@@ -61,34 +61,47 @@
         font-size: 1.5em;
     }
 }
-@include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, 50vh)
+@include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, null)
 {
-    .column
+    .column-container
     {
-        border-top: 2px solid white;
-        border-bottom: 2px solid white;
-        overflow: hidden;
-        .short-desc
-        {
-            @include inject-show-animation(0.3s);
-        }
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
 
-        .long-desc
+        .column
         {
-            @include inject-hide-animation(0.3s);
-            
-        }
-        
-        &:hover
-        {
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+            overflow: hidden;
+            text-align: center;
+            height: auto;
+
             .short-desc
             {
-                @include inject-hide-animation(0.3s);
+                @include inject-show-animation(0.3s);
             }
 
             .long-desc
             {
-                @include inject-show-animation(0.3s);
+                @include inject-hide-animation(0.3s);
+                
+            }
+            
+            &:hover
+            {
+                .short-desc
+                {
+                    @include inject-hide-animation(0.3s);
+                }
+
+                .long-desc
+                {
+                    @include inject-show-animation(0.3s);
+                }
             }
         }
     }
