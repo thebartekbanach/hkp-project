@@ -31,6 +31,7 @@
     padding-top:0px;
     
     display: block;
+
     h1
     {
         text-align: left;
@@ -43,15 +44,27 @@
         background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)); /*Standard*/
         font-size: 3em;
 
+        &::selection
+        {
+            background-color: transparent;
+        }
+
     }
 }
 @include create-section(what-we-do, arial, #fafafa, #c54c82, #111111,white, 350px, null)
 {
     @include set-font-for-element(h1, Lato-Regular, element);
     @include set-font-for-element(p, Lato-Light, element);
+
     h1
     {
         font-size: 40px;
+
+        &::selection
+        {
+            color: #b53c72;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
     }
 
     p
@@ -63,9 +76,14 @@
 }
 @include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, null)
 {
+    h1
+    {
+        padding-bottom: 15px;
+    }
+
     .column
     {
-        background-color: rgba(0,0,0,0.4);
+        background-color: rgba(0,0,0,0.3);
         border-radius: 5px;
         overflow: hidden;
         text-align: center;
