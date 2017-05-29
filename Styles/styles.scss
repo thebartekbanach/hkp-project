@@ -63,46 +63,26 @@
 }
 @include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, null)
 {
-    .column-container
+    .column
     {
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 5px;
+        overflow: hidden;
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100%;
+        height: auto;
 
-        .column
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        h4
         {
-            border-top: 2px solid white;
-            border-bottom: 2px solid white;
-            overflow: hidden;
-            text-align: center;
-            height: auto;
+            padding-top: 12px;
+            font-size: 1.3em;
+        }
 
-            .short-desc
-            {
-                @include inject-show-animation(0.3s);
-            }
-
-            .long-desc
-            {
-                @include inject-hide-animation(0.3s);
-                
-            }
-            
-            &:hover
-            {
-                .short-desc
-                {
-                    @include inject-hide-animation(0.3s);
-                }
-
-                .long-desc
-                {
-                    @include inject-show-animation(0.3s);
-                }
-            }
+        p
+        {
+            font-size: 0.9em;
         }
     }
 }
