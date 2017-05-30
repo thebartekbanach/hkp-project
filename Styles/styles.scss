@@ -69,6 +69,10 @@
 }
 @include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, null)
 {
+    background: -webkit-linear-gradient(top left, #4b2778, #93278f);
+    background: -moz-linear-gradient(top left, #4b2778, #93278f);
+    background: -o-linear-gradient(top left, #4b2778, #93278f);
+    background: linear-gradient(to bottom right, #4b2778, #93278f); /* Standard syntax */
     h1
     {
         padding-bottom: 15px;
