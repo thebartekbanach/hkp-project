@@ -67,12 +67,32 @@
         font-size: 1.5em;
     }
 }
+
 @include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, null)
 {
+    
     background: -webkit-linear-gradient(top left, #4b2778, #93278f);
     background: -moz-linear-gradient(top left, #4b2778, #93278f);
     background: -o-linear-gradient(top left, #4b2778, #93278f);
     background: linear-gradient(to bottom right, #4b2778, #93278f); /* Standard syntax */
+    
+    .row
+    {
+        width: 80%; 
+        margin-top:15px;
+
+        @media only screen and (max-width: 1500px)
+        {
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 991px)
+        {
+            width: 100%;
+            margin-top: 0px;
+        }
+    }
+
     h1
     {
         padding-bottom: 15px;
@@ -80,14 +100,27 @@
 
     .column
     {
+        @media only screen and (min-width: 991px)
+        {
+            &:hover
+            {
+                transition: all 0.3s;
+                color:#fbb03b;
+                transform: scale(1.1);
+            }
+        }
+        
+
         background-color: rgba(0,0,0,0.3);
-        border-radius: 5px;
+
         overflow: hidden;
         text-align: center;
         height: auto;
 
         margin-top: 5px;
         margin-bottom: 5px;
+
+        transition: all 0.3s;
 
         h4
         {
