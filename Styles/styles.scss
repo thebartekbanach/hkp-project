@@ -40,7 +40,6 @@
         padding-left:40px;
         padding-right: 40px;
         padding-bottom: 4px;
-        background-color: red;
         background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)); /*Standard*/
         font-size: 3em;
 
@@ -59,12 +58,6 @@
     h1
     {
         font-size: 40px;
-
-        &::selection
-        {
-            color: #b53c72;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
     }
 
     p
