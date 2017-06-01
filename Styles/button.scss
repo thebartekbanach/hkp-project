@@ -32,10 +32,21 @@
             transition: all 0.3s;
         }
 
-        &:focus
+        &.with-tooltip
         {
-            background-color: #e25b91; 
-            transition: all 0.3s;
+            transition: all 1s;
+
+            &:hover
+            {
+                background-color: #e25b91; 
+                transition: all 0.3s;
+            }
+
+            &:focus
+            {
+                background-color: #e25b91; 
+                transition: all 0.8s;
+            }
         }
     }
 
