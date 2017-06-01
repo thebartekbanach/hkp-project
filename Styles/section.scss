@@ -86,9 +86,9 @@
             }
         }
         
-        @media screen and (max-width: ($image-width / 2 + $correction-value))
+        @media screen and (max-width: ($image-width / 2))
         {
-            background-size: auto 110%;
+            background-size: auto 103%;
         }
 
         @content;
