@@ -10,6 +10,8 @@
 @import 'navbar';
 @import 'toogle-animation';
 @import 'tooltip';
+@import 'photoswipe';
+@import 'default-skin';
 
 @include font-face(Lato-Light, Content/fonts/Lato/Lato-Light);
 @include font-face(Lato-Regular, Content/fonts/Lato/Lato-Regular);
@@ -140,6 +142,7 @@
 @include create-section(realization, arial, #fafafa, #4b2778, white, white, 550px, null){
     @include thumbnail(thumbnail-v, vertical);
     @include thumbnail(thumbnail-h, horizontal);
+    @include thumbnail(thumbnail, both);
     @include set-font-for-element(h1, Lato-Regular, element);
 
     padding-bottom:100px;
