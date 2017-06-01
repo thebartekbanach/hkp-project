@@ -198,19 +198,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzcheuA0jHTCoUgu1FSyK6WFv13iW0zO4&callback=initMap">
     </script>
-    <script>
-    $('[data-toggle="popover"]').popover();
-
-    $('body').on('click', function (e) {
-        $('[data-toggle="popover"]').each(function () {
-            //the 'is' for buttons that trigger popups
-            //the 'has' for icons within a button that triggers a popup
-            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-                $(this).popover('hide');
-            }
-        });
-    });
-    </script>
+    <script src="Scripts/popover.js"></script>
     <script src="Scripts/photoswipe.min.js"></script>
     <script src="Scripts/photoswipe-ui-default.min.js"></script>
     <script src="Scripts/pswp-config.js"></script>
