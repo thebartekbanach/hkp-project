@@ -112,9 +112,9 @@
                         Bożena Zakrzewska</br>
                     </p>
                     <p class="selection-fix">
-                        <button id="e-mail"></button>
+                        <button id="e-mail" data-toggle="popover" data-content="pracowniapisz@o2.pl" data-placement="bottom" data-container="body"></button>
                         <button id="map-btn" data-toggle="collapse" data-target="#map"></button>
-                        <button id="contact-with-us"></button>
+                        <button id="contact-with-us" data-toggle="popover" data-content="+48 504 180 660" data-placement="bottom" data-container="body"></button>
                         <a href="https://www.facebook.com/haftPisz/?fref=ts" target="_blank"><button id="facebook"></button></a>
                     </p>
                 </div>
@@ -132,5 +132,18 @@
     <script src="Scripts/map.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzcheuA0jHTCoUgu1FSyK6WFv13iW0zO4&callback=initMap">
+    </script>
+    <script>
+    $('[data-toggle="popover"]').popover();
+
+    $('body').on('click', function (e) {
+        $('[data-toggle="popover"]').each(function () {
+            //the 'is' for buttons that trigger popups
+            //the 'has' for icons within a button that triggers a popup
+            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                $(this).popover('hide');
+            }
+        });
+    });
     </script>
 </HTML>

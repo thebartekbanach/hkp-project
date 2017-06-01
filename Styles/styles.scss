@@ -9,6 +9,7 @@
 @import 'font-face';
 @import 'navbar';
 @import 'toogle-animation';
+@import 'tooltip';
 
 @include font-face(Lato-Light, Content/fonts/Lato/Lato-Light);
 @include font-face(Lato-Regular, Content/fonts/Lato/Lato-Regular);
@@ -158,7 +159,7 @@
 
 }
  
-@include create-section(contact,arial, #c92d6b, white,white, #ac104f, 100px, null){
+@include create-section(contact,arial, #c92d6b, white,white, #ac104f, 380px, null){
     @include create-button-style(e-mail);
     @include create-button-style(map-btn);
     @include create-button-style(contact-with-us);
