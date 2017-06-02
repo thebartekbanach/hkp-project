@@ -212,6 +212,22 @@ div#google-map
     height: 350px;
 }
 
-@include setup-footer(50px, whitesmoke, #532e75);
+@include setup-footer(50px, whitesmoke, #532e75)
+{
+    a
+    {
+        color:white;
+        transition: all 0.3s;
+
+        &:hover
+        {
+            color: whitesmoke;
+            font-size: 1.15em;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+    }
+
+}
 
 
