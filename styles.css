@@ -8172,7 +8172,8 @@ section#services {
       font-size: 1.3em; }
     section#services .column p {
       margin-top: 15px;
-      font-size: 0.9em; }
+      font-size: 0.9em;
+      line-height: 1.6em; }
 
 section#realization {
   padding-top: 30px;
