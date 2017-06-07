@@ -8764,7 +8764,7 @@ section#header {
     list-style-type: none;
     margin-right: 20px; }
     section#header ul#navbar li {
-      display: inline-block; }
+      display: inline; }
       section#header ul#navbar li a {
         letter-spacing: 1.1px;
         text-decoration: none;
@@ -9168,13 +9168,11 @@ section#contact {
     font-family: Lato-Light; }
   section#contact p {
     font-size: 20px;
-    line-height: 35px;
-    max-width: 90%; }
+    line-height: 35px; }
   section#contact p.selection-fix::selection {
     background-color: transparent; }
   section#contact h1 {
-    font-size: 40px;
-    max-width: 90%; }
+    font-size: 40px; }
 
 div#google-map {
   width: 100%;
