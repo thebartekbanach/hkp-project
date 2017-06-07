@@ -8751,6 +8751,9 @@ section#header {
     margin-top: 235px;
     margin-bottom: 235px;
     line-height: 130px; }
+    @media screen and (max-width: 800px) {
+      section#header h1 {
+        line-height: 86.66667px; } }
   @media screen and (max-width: 909.5px) {
     section#header {
       background-size: auto 103%; } }
@@ -8761,7 +8764,7 @@ section#header {
     list-style-type: none;
     margin-right: 20px; }
     section#header ul#navbar li {
-      display: inline; }
+      display: inline-block; }
       section#header ul#navbar li a {
         letter-spacing: 1.1px;
         text-decoration: none;

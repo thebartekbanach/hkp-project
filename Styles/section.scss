@@ -83,6 +83,11 @@
                 margin-top: $section-height / 2 - $title-height / 2;
                 margin-bottom: $section-height / 2 - $title-height / 2;
                 line-height: $title-height;
+
+                @media screen and (max-width: 800px)
+                {
+                    line-height: $title-height / 1.5;
+                }
             }
         }
         
