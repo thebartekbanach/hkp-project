@@ -133,6 +133,11 @@
         text-align: center;
         min-height: 230px;
 
+        @media only screen and (max-width: 991px)
+        {
+            min-height: auto;
+        }
+
         margin-top: 5px;
         margin-bottom: 5px;
 

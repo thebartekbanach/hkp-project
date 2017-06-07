@@ -8895,6 +8895,9 @@ section#services {
         transition: all 0.3s;
         color: #fbb03b;
         transform: scale(1.1); } }
+    @media only screen and (max-width: 991px) {
+      section#services .column {
+        min-height: auto; } }
     section#services .column h4 {
       margin-left: auto;
       margin-right: auto;
