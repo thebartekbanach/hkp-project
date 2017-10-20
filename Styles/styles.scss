@@ -1,0 +1,256 @@
+@import 'tether.min';
+@import 'bootstrap.min';
+@import 'section-triangle';
+@import 'section';
+@import 'button';
+@import 'footer';
+@import 'thumbnail-gallery';
+@import 'font-element';
+@import 'font-face';
+@import 'navbar';
+@import 'toogle-animation';
+@import 'tooltip';
+@import 'photoswipe';
+@import 'default-skin';
+@import 'aos';
+
+@include font-face(Lato-Light, Content/fonts/Lato/Lato-Light);
+@include font-face(Lato-Regular, Content/fonts/Lato/Lato-Regular);
+@include font-face(BonvenoCF-Light, Content/fonts/BonvenoCF/BonvenoCF-Light);
+
+
+.container-fluid
+{
+    max-width:100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+@include create-section-triangle-style(page-header, #fafafa, 35px, 50px);
+@include create-section-with-bgimage(header, arial, #8e6f90, white, white, white, 600px, 130px, null, "Content/Header.jpg", 1819px, 11)
+{
+    @include create-navbar(navbar, white, #ff2fb3);
+    @include set-font-for-element(h1, BonvenoCF-Light, element);
+    @include set-font-for-element(a, Lato-Light, element);
+    padding-top:0px;
+    
+    display: block;
+
+    h1
+    {
+        text-align: left;
+        display: block;
+        width: 100%;
+        padding-left:40px;
+        padding-right: 40px;
+        padding-bottom: 4px;
+        background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)); /*Standard*/
+        font-size: 3em;
+
+        &::selection
+        {
+            background-color: transparent;
+        }
+
+    }
+}
+@include create-section(what-we-do, arial, #fafafa, #c54c82, #111111,white, 350px, null)
+{
+    @include set-font-for-element(h1, Lato-Regular, element);
+    @include set-font-for-element(p, Lato-Light, element);
+
+    h1
+    {
+        font-size: 40px;
+        max-width: 90%;
+    }
+
+    p
+    {
+        display: block;
+        width: 60%;
+        font-size: 1.5em;
+
+        @media screen and (max-width: 800px)
+        {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 600px)
+        {
+            width: 90%;
+        }
+    }
+}
+
+@include create-section(services, arial, #93278f, white, white, #fbb03b, 550px, null)
+{
+    
+    background: -webkit-linear-gradient(top left, #4b2778, #93278f);
+    background: -moz-linear-gradient(top left, #4b2778, #93278f);
+    background: -o-linear-gradient(top left, #4b2778, #93278f);
+    background: linear-gradient(to bottom right, #4b2778, #93278f); /* Standard syntax */
+    
+    .row
+    {
+        width: 80%; 
+        margin-top:15px;
+
+        @media only screen and (max-width: 1500px)
+        {
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 991px)
+        {
+            width: 100%;
+            margin-top: 0px;
+        }
+    }
+
+    h1
+    {
+        padding-bottom: 15px;
+        max-width: 90%;
+    }
+
+    .column
+    {
+        @media only screen and (min-width: 991px)
+        {
+            &:hover
+            {
+                transition: all 0.3s;
+                color:#fbb03b;
+                transform: scale(1.1);
+            }
+        }
+        
+
+        background-color: rgba(0,0,0,0.3);
+
+        overflow: hidden;
+        text-align: center;
+        min-height: 230px;
+
+        @media only screen and (max-width: 991px)
+        {
+            min-height: auto;
+        }
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        transition: all 0.3s;
+
+        h4
+        {
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 12px;
+            font-size: 1.3em;
+            max-width: 90%;
+        }
+
+        p
+        {
+            margin-top: 15px;
+            font-size: 0.9em;
+            line-height: 1.6em;
+            max-width: 90%;
+        }
+    }
+}
+
+@include create-section(realization, arial, #fafafa, #4b2778, white, white, 550px, null){
+    @include thumbnail(thumbnail-v, vertical);
+    @include thumbnail(thumbnail-h, horizontal);
+    @include thumbnail(thumbnail, both);
+    @include set-font-for-element(h1, Lato-Regular, element);
+
+    .row
+    {
+        width: 80%;
+
+        @media only screen and (max-width: 1500px)
+        {
+            width: 90%;
+        }
+
+        @media only screen and (max-width: 991px)
+        {
+            width: 90%;
+        }
+    }
+
+    padding-bottom:100px;
+
+    div.fixpadding
+    {
+        padding: 1px;
+        margin: 0;
+    }
+
+    h1
+    {
+        margin-bottom: 40px;
+        margin-top: 10px; 
+        font-size: 40px;
+        max-width: 90%;
+    }
+
+}
+ 
+@include create-section(contact,arial, #c92d6b, white,white, #ac104f, 380px, null){
+    @include create-button-style(e-mail);
+    @include create-button-style(map-btn);
+    @include create-button-style(contact-with-us);
+    @include create-button-style(facebook);
+    @include set-font-for-element(h1, Lato-Regular, element);
+    @include set-font-for-element(p, Lato-Light, element);
+    
+    p
+    {
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    p.selection-fix
+    {
+        &::selection
+        {
+            background-color: transparent;
+        }
+    }
+
+    h1
+    {
+        font-size: 40px;
+    }
+}
+
+div#google-map
+{
+    width: 100%;
+    height: 350px;
+}
+
+@include setup-footer(50px, whitesmoke, #532e75)
+{
+    a
+    {
+        color:white;
+        transition: all 0.3s;
+
+        &:hover
+        {
+            color: whitesmoke;
+            font-size: 1.15em;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+    }
+
+}
+
+

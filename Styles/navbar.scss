@@ -1,0 +1,45 @@
+//Możliwość marginesów lewa prawa, góra dół i co dzieje się po hover 
+
+@mixin create-navbar($id, $color, $hover-color)
+{
+     ul##{$id}
+    {
+        position: absolute;
+        right: 0;
+        top:25px;
+        list-style-type: none;
+        margin-right: 20px;
+
+        li
+        {
+            display: inline;
+            
+            a
+            {
+                letter-spacing: 1.1px;
+                text-decoration: none;
+                color: $color;
+                transition: all 0.3s;
+                font-size: 1.1em;
+                padding: 22px;
+
+                &:hover
+                {
+                    transition: all 0.3s;
+                    color: $hover-color;
+                }
+
+                &::selection
+                {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        &::selection
+        {
+            background-color: transparent;
+        }
+        
+    }
+}

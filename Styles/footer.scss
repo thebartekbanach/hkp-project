@@ -1,0 +1,15 @@
+@mixin setup-footer($footer-height, $font-color, $footer-bgcolor)
+{
+    footer
+    {
+        display: block;
+        color: $font-color;
+        background: $footer-bgcolor;
+        height: $footer-height;
+        width: 100%;
+        text-align: center;
+        line-height: $footer-height;
+
+        @content;
+    }
+}
