@@ -1,0 +1,11 @@
+{# index.nunjucks #}
+{% extends "layout.nunjucks" %}     
+
+{% block content %}
+    {% include "sections/welcome.nunjucks" %}
+    {% include "sections/about.nunjucks" %}
+    {% include "sections/services.nunjucks" %}
+    {% include "sections/realizations.nunjucks" %}
+    {% include "sections/contact.nunjucks" %}
+    {% include "sections/footer.nunjucks" %}
+{% endblock %} 

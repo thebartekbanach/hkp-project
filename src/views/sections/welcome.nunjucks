@@ -1,0 +1,12 @@
+{% import "macros/img.nunjucks" as img %}
+
+<section id="welcome-section">
+    {# Background image #}
+    {{ img.cover(welcomeBackground) }}
+
+    {# Navbar partial include #}
+    {% include "partials/navbar.nunjucks" %}
+
+    {# Welcome header #}
+    <header class="welcome-header">{{welcomeHeader}}</header>
+</section>

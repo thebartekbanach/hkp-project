@@ -1,0 +1,8 @@
+{
+    "stylesheets": [
+        "../styles/site.css"
+    ],
+    "embeddedStylesheets": [
+        "embedded/styles/embedded.css"
+    ]
+}

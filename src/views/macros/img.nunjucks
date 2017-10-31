@@ -1,0 +1,3 @@
+{% macro cover(src) %}
+    <img class="cover" src="{{src}}" />
+{% endmacro %}

@@ -1,0 +1,8 @@
+{
+    "javascripts": [
+        "../scripts/site.js"
+    ],
+    "embeddedJavascripts": [
+        "embedded/scripts/embedded.js"
+    ]
+}

@@ -1,0 +1,15 @@
+{% import "macros/img.nunjucks" as img %}
+
+<nav>
+    {# Navbar logo #}
+    <span class="logo">
+        {{ img.cover(navbarLogo) }}
+    </span>
+
+    {# Navbar items #}
+    <span class="items">
+        {% for item in navbarItems %}
+            <a class="item" href="{{item.sectionId}}">{{item.name}}</a>
+        {% endfor %}
+    </span>
+</nav>

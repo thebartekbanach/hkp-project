@@ -1,0 +1,10 @@
+{
+    "navbarItems": [
+        { "name": "Usługi", "sectionId": "#services"},
+        { "name": "Realizacje", "sectionId": "#realizations"},
+        { "name": "Kontakt", "sectionId": "#contact"}
+    ],
+    "navbarLogo": "res/img/logo.svg",
+    "welcomeBackground": "/res/img/background.png",
+    "welcomeHeader": "ZygZak Hafty Komputerowe"
+}

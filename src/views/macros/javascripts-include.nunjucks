@@ -1,0 +1,15 @@
+{% macro include(javascripts) %}
+    <!-- Javascripts includes -->
+    {% for script in javascripts %}
+        <script type="text/javascript" src="{{script}}"></script>
+    {% endfor %}
+{% endmacro %}
+
+{% macro embed(javascripts) %}
+    <!-- Embedded javascripts -->
+    {% for script in javascripts %}
+        <script type="text/javascript">
+            {% include script %}
+        </script>
+    {% endfor %}
+{% endmacro %}

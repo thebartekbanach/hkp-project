@@ -1,0 +1,7 @@
+<section id="what-we-do-section">
+    {# Section header #}
+    <header class="section-header">{{aboutHeader}}</header>
+
+    {# Section content #}
+    <article class="about">{{aboutContent}}
+</section>

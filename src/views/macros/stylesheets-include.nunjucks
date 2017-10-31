@@ -1,0 +1,13 @@
+{% macro include(stylesheets) %}
+    <!-- Stylesheets includes -->
+    {% for stylesheet in stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{stylesheet}}"> 
+    {% endfor %}
+{% endmacro %}
+
+{% macro embed(stylesheets) %}
+    <!-- Embedded stylesheets -->
+    {% for stylesheet in stylesheets %}
+        {% include stylesheet %}
+    {% endfor %}
+{% endmacro %}
