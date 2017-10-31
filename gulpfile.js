@@ -81,7 +81,7 @@ gulp.task('watch:js', function () {
 });
 
 gulp.task('watch:html', function () {
-    gulp.watch('src/views/**/*.haml', ['build:html']);
+    gulp.watch('src/views/index.haml', ['build:html']);
 });
 
 gulp.task('watch:resources', function () {
