@@ -8,8 +8,23 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
-    haml = require('gulp-haml'),
-    babel = require('gulp-babel');
+    nunjucks = require('gulp-nunjucks-render'),
+    babel = require('gulp-babel'),
+    data = require('gulp-data'),
+    htmlmin = require('gulp-htmlmin'),
+    fs = require("fs");
+
+function read_and_merge_data(){
+    var path = "./src/views/data/"
+    var files = fs.readdirSync(path);
+    var dataObj = {};
+
+    for(var i = 0; i < files.length; ++i){
+        Object.assign(dataObj, require(path + files[i]));
+    }
+
+    return dataObj;
+}
 
 // clean
 gulp.task("clean:js", function (cb) {
@@ -41,7 +56,6 @@ gulp.task("build:js", function () {
         .pipe(uglify())
         .pipe(rename("site.min.js"))
         .pipe(gulp.dest("dist/scripts/"))
-        
 });
 
 gulp.task("build:css", function () {
@@ -57,15 +71,21 @@ gulp.task("build:css", function () {
 
 gulp.task('build:html', function () {
     gulp
-        .src('src/views/**/*.haml')
-        .pipe(haml())
+        .src('src/views/index.nunjucks')
+        .pipe(data(function() {
+            return read_and_merge_data();
+          }))
+        .pipe(nunjucks({
+            path: ['src/views']
+        }))
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dist/views/'));
 });
 
 gulp.task('build:resources', function() {
     gulp
         .src('src/resources/**/*')
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('dist/res/'));
 })
 
 gulp.task("build:simple", ["build:js", "build:css", "build:html", "build:resources"]);
@@ -81,7 +101,7 @@ gulp.task('watch:js', function () {
 });
 
 gulp.task('watch:html', function () {
-    gulp.watch('src/views/index.haml', ['build:html']);
+    gulp.watch('src/views/**/*', ['build:html']);
 });
 
 gulp.task('watch:resources', function () {
