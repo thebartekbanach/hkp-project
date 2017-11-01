@@ -1,0 +1,34 @@
+{
+    "contactHeader": "Skontaktuj się!",
+    "contactInfo": [
+        "Haft komputerowy Pisz",
+        "ul. Tęczowa 3a Pisz",
+        "Adrianna Nieostrudzka"
+    ],
+    "contactData": [
+        {
+            "id": "id1",
+            "href": "#",
+            "description": "Zrób",
+            "img": "../res/img/sections/contact/1.svg"
+        },
+        {
+            "id": "id2",
+            "href": "#", 
+            "description": "Zrób",
+            "img": "../res/img/sections/contact/2.svg"
+        },
+        {
+            "id": "id3",
+            "href": "#",
+            "description": "Zrób",
+            "img": "../res/img/sections/contact/3.svg"
+        },
+        {
+            "id": "id4",
+            "href": "#",
+            "description": "Zrób",
+            "img": "../res/img/sections/contact/4.svg"
+        }
+    ]
+}

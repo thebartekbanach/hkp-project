@@ -1,0 +1,45 @@
+{
+    "realiationsHeader": "Nasze realizacje",
+    "realizationsData": [
+        {
+            "img": "../res/img/sections/realizations/1.png",
+            "title": "Realizacja numer 1",
+            "description": "Realizacja numer 1 jest najlepsza."
+        },
+        {
+            "img": "../res/img/sections/realizations/2.png",
+            "title": "Realizacja numer 2",
+            "description": "Realizacja numer 2 jest najlepsza."
+        },
+        {
+            "img": "../res/img/sections/realizations/3.png",
+            "title": "Realizacja numer 3",
+            "description": "Realizacja numer 3 jest najlepsza."
+        },
+        {
+            "img": "../res/img/sections/realizations/4.png",
+            "title": "Realizacja numer 4",
+            "description": "Realizacja numer 4 jest najlepsza."
+        },
+        {
+            "img": "../res/img/sections/realizations/5.png",
+            "title": "Realizacja numer 5",
+            "description": "Realizacja numer 5 jest najlepsza."
+        },
+        {
+            "img": "../res/img/sections/realizations/6.png",
+            "title": "Realizacja numer 6",
+            "description": "Realizacja numer 6 jest najlepsza."
+        },
+        {
+            "img": "../res/img/sections/realizations/7.png",
+            "title": "Realizacja numer 7",
+            "description": "Realizacja numer 7 jest najlepsza."
+        },
+        {
+            "img": "../res/img/sections/realizations/8.png",
+            "title": "Realizacja numer 8",
+            "description": "Realizacja numer 8 jest najlepsza."
+        }
+    ]
+}
