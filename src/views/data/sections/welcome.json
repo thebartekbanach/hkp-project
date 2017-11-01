@@ -4,7 +4,7 @@
         { "name": "Realizacje", "sectionId": "#realizations"},
         { "name": "Kontakt", "sectionId": "#contact"}
     ],
-    "navbarLogo": "res/img/logo.svg",
-    "welcomeBackground": "/res/img/background.png",
+    "navbarLogo": "../res/img/sections/welcome/logo.svg", 
+    "welcomeBackground": "../res/img/sections/welcome/background.jpg", 
     "welcomeHeader": "ZygZak Hafty Komputerowe"
 }
