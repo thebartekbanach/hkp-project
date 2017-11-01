@@ -3,13 +3,13 @@
 <nav class="page-navigation">
     {# Navbar logo #}
     <span class="logo">
-        {{ img.cover(navbarLogo) }}
+        {{ img.contain(navbarLogo) }}
     </span>
 
     {# Navbar items #}
-    <span class="items">
+    <ul class="items">
         {% for item in navbarItems %}
-            <a class="item" href="{{item.sectionId}}">{{item.name}}</a>
+            <li class="item" ><a href="{{item.sectionId}}">{{item.name}}</a></li>
         {% endfor %}
-    </span>
+    </ul>
 </nav>
