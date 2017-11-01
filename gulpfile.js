@@ -14,16 +14,29 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     fs = require("fs");
 
-function read_and_merge_data(){
-    var path = "./src/views/data/"
+function read_and_merge_data_from(path, dataObj){
     var files = fs.readdirSync(path);
-    var dataObj = {};
 
     for(var i = 0; i < files.length; ++i){
         Object.assign(dataObj, require(path + files[i]));
     }
 
     return dataObj;
+}
+
+function read_and_merge_data(){
+    var pathes = [
+        "./src/views/data/site/", 
+        "./src/views/data/sections/"
+    ];
+
+    var data = {};
+
+    for(var i = 0; i < pathes.length; ++i){
+        data = read_and_merge_data_from(pathes[i], data);
+    }
+
+    return data;
 }
 
 // clean
