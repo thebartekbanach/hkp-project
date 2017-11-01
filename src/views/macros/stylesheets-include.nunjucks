@@ -8,6 +8,8 @@
 {% macro embed(stylesheets) %}
     <!-- Embedded stylesheets -->
     {% for stylesheet in stylesheets %}
-        {% include stylesheet %}
+        <style type="text/css">
+            {% include stylesheet %}
+        </style>
     {% endfor %}
 {% endmacro %}
