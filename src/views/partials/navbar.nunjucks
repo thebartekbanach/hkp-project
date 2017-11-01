@@ -1,6 +1,6 @@
 {% import "macros/img.nunjucks" as img %}
 
-<nav>
+<nav class="page-navigation">
     {# Navbar logo #}
     <span class="logo">
         {{ img.cover(navbarLogo) }}
