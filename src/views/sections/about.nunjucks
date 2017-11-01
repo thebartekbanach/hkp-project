@@ -1,4 +1,4 @@
-<section id="what-we-do-section">
+<section id="about-section">
     {# Section header #}
     <header class="section-header">{{aboutHeader}}</header>
 
