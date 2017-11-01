@@ -7,7 +7,7 @@ $screen-md-max:              1199px;
 $screen-lg-min:              1200px;
 
 $grid-gutter-width: 30px;
-$grid-columns: 12;
+$grid-cols: 12;
 
 // Centered container element
 @mixin container-fixed($gutter: $grid-gutter-width) {
@@ -18,7 +18,7 @@ $grid-columns: 12;
   @include clearfix();
 }
 
-// Creates a wrapper for a series of columns
+// Creates a wrapper for a series of cols
 @mixin make-row($gutter: $grid-gutter-width) {
   margin-left:  ($gutter / -2);
   margin-right: ($gutter / -2);
@@ -33,36 +33,36 @@ $grid-columns: 12;
   padding-right: ($gutter / 2);
 }
 
-// Creates a wrapper for a series of columns
+// Creates a wrapper for a series of cols
 @mixin make-row($gutter: $grid-gutter-width) {
   margin-left:  ($gutter / -2);
   margin-right: ($gutter / -2);
 }
 
-// Generate the extra small columns
-@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
+// Generate the extra small cols
+@mixin make-xs-col($cols, $gutter: $grid-gutter-width) {
   position: relative;
   float: left;
-  width: percentage(($columns / $grid-columns));
+  width: percentage(($cols / $grid-cols));
   min-height: 1px;
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
 }
-@mixin make-xs-column-offset($columns) {
-  margin-left: percentage(($columns / $grid-columns));
+@mixin make-xs-col-offset($cols) {
+  margin-left: percentage(($cols / $grid-cols));
 }
-@mixin make-xs-column-roffset($columns) {
-  margin-right: percentage(($columns / $grid-columns));
+@mixin make-xs-col-roffset($cols) {
+  margin-right: percentage(($cols / $grid-cols));
 }
-@mixin make-xs-column-push($columns) {
-  left: percentage(($columns / $grid-columns));
+@mixin make-xs-col-push($cols) {
+  left: percentage(($cols / $grid-cols));
 }
-@mixin make-xs-column-pull($columns) {
-  right: percentage(($columns / $grid-columns));
+@mixin make-xs-col-pull($cols) {
+  right: percentage(($cols / $grid-cols));
 }
 
-// Generate the small columns
-@mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
+// Generate the small cols
+@mixin make-sm-col($cols, $gutter: $grid-gutter-width) {
   position: relative;
   min-height: 1px;
   padding-left:  ($gutter / 2);
@@ -70,32 +70,32 @@ $grid-columns: 12;
 
   @media (min-width: $screen-sm-min) {
     float: left;
-    width: percentage(($columns / $grid-columns));
+    width: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-sm-column-offset($columns) {
+@mixin make-sm-col-offset($cols) {
   @media (min-width: $screen-sm-min) {
-    margin-left: percentage(($columns / $grid-columns));
+    margin-left: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-sm-column-roffset($columns) {
+@mixin make-sm-col-roffset($cols) {
   @media (min-width: $screen-sm-min) {
-    margin-right: percentage(($columns / $grid-columns));
+    margin-right: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-sm-column-push($columns) {
+@mixin make-sm-col-push($cols) {
   @media (min-width: $screen-sm-min) {
-    left: percentage(($columns / $grid-columns));
+    left: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-sm-column-pull($columns) {
+@mixin make-sm-col-pull($cols) {
   @media (min-width: $screen-sm-min) {
-    right: percentage(($columns / $grid-columns));
+    right: percentage(($cols / $grid-cols));
   }
 }
 
-// Generate the medium columns
-@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
+// Generate the medium cols
+@mixin make-md-col($cols, $gutter: $grid-gutter-width) {
   position: relative;
   min-height: 1px;
   padding-left:  ($gutter / 2);
@@ -103,32 +103,32 @@ $grid-columns: 12;
 
   @media (min-width: $screen-md-min) {
     float: left;
-    width: percentage(($columns / $grid-columns));
+    width: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-md-column-offset($columns) {
+@mixin make-md-col-offset($cols) {
   @media (min-width: $screen-md-min) {
-    margin-left: percentage(($columns / $grid-columns));
+    margin-left: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-md-column-roffset($columns) {
+@mixin make-md-col-roffset($cols) {
   @media (min-width: $screen-md-min) {
-    margin-right: percentage(($columns / $grid-columns));
+    margin-right: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-md-column-push($columns) {
+@mixin make-md-col-push($cols) {
   @media (min-width: $screen-md-min) {
-    left: percentage(($columns / $grid-columns));
+    left: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-md-column-pull($columns) {
+@mixin make-md-col-pull($cols) {
   @media (min-width: $screen-md-min) {
-    right: percentage(($columns / $grid-columns));
+    right: percentage(($cols / $grid-cols));
   }
 }
 
-// Generate the large columns
-@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
+// Generate the large cols
+@mixin make-lg-col($cols, $gutter: $grid-gutter-width) {
   position: relative;
   min-height: 1px;
   padding-left:  ($gutter / 2);
@@ -136,25 +136,25 @@ $grid-columns: 12;
 
   @media (min-width: $screen-lg-min) {
     float: left;
-    width: percentage(($columns / $grid-columns));
+    width: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-lg-column-offset($columns) {
+@mixin make-lg-col-offset($cols) {
   @media (min-width: $screen-lg-min) {
-    margin-left: percentage(($columns / $grid-columns));
+    margin-left: percentage(($cols / $grid-cols));
   }
-}@mixin make-lg-column-roffset($columns) {
+}@mixin make-lg-col-roffset($cols) {
   @media (min-width: $screen-lg-min) {
-    margin-right: percentage(($columns / $grid-columns));
-  }
-}
-@mixin make-lg-column-push($columns) {
-  @media (min-width: $screen-lg-min) {
-    left: percentage(($columns / $grid-columns));
+    margin-right: percentage(($cols / $grid-cols));
   }
 }
-@mixin make-lg-column-pull($columns) {
+@mixin make-lg-col-push($cols) {
   @media (min-width: $screen-lg-min) {
-    right: percentage(($columns / $grid-columns));
+    left: percentage(($cols / $grid-cols));
+  }
+}
+@mixin make-lg-col-pull($cols) {
+  @media (min-width: $screen-lg-min) {
+    right: percentage(($cols / $grid-cols));
   }
 }
