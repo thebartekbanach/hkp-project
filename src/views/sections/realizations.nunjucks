@@ -1,1 +1,12 @@
-realizations
+{% import "macros/img.nunjucks" as img %}
+
+<section id="realizations-section">
+    <header class="section-header">{{ realizationsHeader }}</header>
+    <ul class="realizations">
+        {% for realization in realizationsData %}
+            <li class="realization" data-title="{{ realization.title }}" data-description="{{ realization.description }}">
+                {{ img.cover(realization.img) }}
+            </li>
+        {% endfor %}    
+    </ul>
+</section>
