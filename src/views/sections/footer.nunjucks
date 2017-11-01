@@ -1,1 +1,4 @@
-footer
+<footer>
+    <span class="copyrights">{{ footerCopyrights }}</span>
+    <span class="author">Made with <span class="heart-icon"></span> by Nullpoint Studio</span>
+</footer>
