@@ -2,9 +2,9 @@ $welcome-header-background-transparentize-from: 0.5;
 $welcome-header-background-transparentize-from-color: black;
 $welcome-header-background-transparentize-to: 1;
 $welcome-header-background-transparentize-to-color: black;
-$welcome-header-font-family: Lato-Regular;
+$welcome-header-font-family: Lato-Light;
 $welcome-header-font-size: 4vw;
-$welcome-header-padding: 20px 30px;
+$welcome-header-padding: 20px 40px;
 $welcome-header-width: 80%;
 
 .welcome-header {
@@ -27,7 +27,7 @@ $welcome-header-width: 80%;
     color: white;
     font-family: $welcome-header-font-family;
     font-size: $welcome-header-font-size;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     padding: $welcome-header-padding;
 
 }
