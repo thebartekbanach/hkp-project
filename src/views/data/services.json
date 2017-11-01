@@ -1,0 +1,35 @@
+{
+    "servicesHeader": "Nasze usługi",
+    "servicesData": [
+        {
+            "img": "../res/img/sections/services/1.png",
+            "title": "Usługa numer 1",
+            "description": "Opis usługi numer jeden!"
+        },
+        {
+            "img": "../res/img/sections/services/2.png",
+            "title": "Usługa numer 2",
+            "description": "Opis usługi numer dwa!"
+        },
+        {
+            "img": "../res/img/sections/services/3.png",
+            "title": "Usługa numer 3",
+            "description": "Opis usługi numer trzy!"
+        },
+        {
+            "img": "../res/img/sections/services/4.png",
+            "title": "Usługa numer 4",
+            "description": "Opis usługi numer cztery!"
+        },
+        {
+            "img": "../res/img/sections/services/5.png",
+            "title": "Usługa numer 5",
+            "description": "Opis usługi numer pięć!"
+        },
+        {
+            "img": "../res/img/sections/services/6.png",
+            "title": "Usługa numer 6",
+            "description": "Opis usługi numer sześć!"
+        }
+    ]
+}
