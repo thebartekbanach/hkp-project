@@ -1,0 +1,11 @@
+@function res-raw-img($path){
+    @return res("img/" + $path);
+}
+
+@function res-raw-section-img($path){
+    @return res-raw-image("sections/" + $path);
+}
+
+@function res-section-img($sectionName, $path){
+    @return res-section-image($sectionName + "/" + $path);
+}

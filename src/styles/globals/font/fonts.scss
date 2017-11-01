@@ -1,0 +1,7 @@
+@import "font-load";
+
+@include load-font(Lato-Thin);
+@include load-font(Lato-Light);
+@include load-font(Lato-Regular);
+@include load-font(Lato-Medium);
+@include load-font(Lato-Black);

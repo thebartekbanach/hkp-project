@@ -1,0 +1,30 @@
+$triangle-sharpness: 40px;
+$triangle-height: 50px;
+$triangle-part-width: 50%;
+$triangle-color: white;
+$triangle-zindex: 2;
+
+&:before,  
+&:after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    height: 0; 
+    border-color: transparent; 
+    border-bottom: $triangle-height solid $triangle-color;   
+    width: calc(50% - #{$triangle-sharpness}); 
+    border-style: solid; 
+    z-index: $triangle-zindex; 
+} 
+
+&:before { 
+    border-right-width: $triangle-sharpness; 
+    border-left-width: 0; 
+    left: 0; 
+} 
+
+&:after { 
+    border-left-width: $triangle-sharpness; 
+    border-right-width: 0; 
+    right:0; 
+}

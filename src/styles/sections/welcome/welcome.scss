@@ -1,0 +1,12 @@
+$welcome-section-height: 90vh;
+
+#welcome-section {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: $welcome-section-height;
+
+    @import "partials/navbar";
+    @import "partials/header";
+    @import "partials/triangle";
+}

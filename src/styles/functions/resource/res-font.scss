@@ -1,0 +1,7 @@
+@function res-font($path){
+    @return res("fonts/" + $path);
+}
+
+@function res-std-font($fontName){
+    @return res("fonts/" + $fontName + "/");
+}
