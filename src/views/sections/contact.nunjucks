@@ -1,1 +1,22 @@
-contact
+{% import "macros/img.nunjucks" as img %}
+
+<section id="contact-section">
+    <header class="section-header">{{ contactHeader }}</header>
+    <article class="contactInfo">
+        {% for info in contactInfo %}
+            {{ info }} <br />
+        {% endfor %}
+    </article>
+    <section class="contacts">
+        {% for contact in contactData %}
+            <a class="contact" id="{{ contact.id }}" href="{{ contact.href }}" data-tooltip="{{ contact.description }}">
+                <div class="contact-icon">
+                    {{ img.cover(contact.img) }}
+                </div>
+            </a>
+        {% endfor %}    
+    </section>
+    <section class="map">
+        <div class="google-map"></div>
+    </section>
+</section>
