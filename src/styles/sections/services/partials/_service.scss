@@ -1,0 +1,67 @@
+.service {
+    @include make-xs-col(12);
+    @include make-sm-col(6);
+    @include make-md-col(4);
+    @include make-lg-col(4);
+
+    min-height: 140px;
+    margin-bottom: 15px;
+    
+    overflow: hidden;
+    max-width: 100%;
+    @include clearfix();
+    display: block;
+
+    .service-icon {
+        @include make-xs-col(2);
+        position: relative;
+        top: 30px;
+        height: 40px;   
+    }
+
+    .service-content {
+        @include make-xs-col(8);
+
+        color: white;
+        
+        .service-title {
+            font-family: Lato-Regular;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .service-description {
+            font-family: Lato-Light;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .service {
+        min-height: auto;
+        margin-bottom: 60px;
+
+        .service-content {
+            @include make-xs-col(9);
+        }
+    }
+
+    .service:nth-child(2n+1) {
+        .service-icon,
+        .service-content {
+            float: right;
+        }
+        
+        .service-icon {
+            top: 20px;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .service:nth-child(2n+1) {        
+        .service-icon {
+            top: 30px;
+        }
+    }
+}

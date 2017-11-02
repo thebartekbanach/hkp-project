@@ -1,3 +1,23 @@
 #services-section {
-    display: none;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: linear-gradient(to bottom right, #4b2778, #93278f); /* Standard syntax */
+
+    @import "partials/header";
+
+    .services {
+        width: 90%;
+        @include clearfix();
+        margin: 0 auto;
+        display: block;
+        padding-left: 0;
+
+        list-style-type: none;
+
+        @import "partials/service";
+        
+        @media (max-width: 767px) {
+            width: 95%;
+        }
+    }
 }

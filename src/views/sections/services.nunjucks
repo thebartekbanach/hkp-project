@@ -2,17 +2,19 @@
 
 <section id="services-section">
     <header class="section-header">{{servicesHeader}}</header>
-    <ul class="sevices">
+    <ul class="services">
         {% for service in servicesData %}
             <li class="service">
                 <div class="service-icon">
-                    {{ img.cover(service.img) }}
+                    {{ img.contain(service.img) }}
                 </div>
-                <header class="service-title">
-                    {{ service.title }}
-                </header>
-                <div class="service-description">
-                    {{ service.description }} 
+                <div class="service-content">
+                    <header class="service-title">
+                        {{ service.title }}
+                    </header>
+                    <div class="service-description">
+                        {{ service.description }} 
+                    </div>
                 </div>
             </li>
         {% endfor %}    

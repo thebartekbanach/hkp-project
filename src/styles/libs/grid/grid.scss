@@ -42,11 +42,12 @@ $grid-cols: 12;
 // Generate the extra small cols
 @mixin make-xs-col($cols, $gutter: $grid-gutter-width) {
   position: relative;
-  float: left default;
+  float: left;
   width: percentage(($cols / $grid-cols));
   min-height: 1px;
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
+  box-sizing: border-box;
 }
 @mixin make-xs-col-offset($cols) {
   margin-left: percentage(($cols / $grid-cols));
@@ -67,6 +68,7 @@ $grid-cols: 12;
   min-height: 1px;
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
+  box-sizing: border-box;
 
   @media (min-width: $screen-sm-min) {
     float: left default;
@@ -100,6 +102,7 @@ $grid-cols: 12;
   min-height: 1px;
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
+  box-sizing: border-box;
 
   @media (min-width: $screen-md-min) {
     float: left default;
@@ -133,6 +136,7 @@ $grid-cols: 12;
   min-height: 1px;
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
+  box-sizing: border-box;
 
   @media (min-width: $screen-lg-min) {
     float: left default;

@@ -1,35 +1,35 @@
 {
-    "servicesHeader": "Nasze usługi",
+    "servicesHeader": "Oferujemy",
     "servicesData": [
         {
-            "img": "../res/img/sections/services/1.png",
-            "title": "Usługa numer 1",
-            "description": "Opis usługi numer jeden!"
+            "img": "../res/img/sections/services/metki.svg", 
+            "title": "Metki odzieżowe",
+            "description": "Metkujemy zarówno wierzchnią część odzieży jak i stosujemy wszywki na karku"
         },
         {
-            "img": "../res/img/sections/services/2.png",
-            "title": "Usługa numer 2",
-            "description": "Opis usługi numer dwa!"
+            "img": "../res/img/sections/services/krawiectwo.svg",
+            "title": "Krawiectwo",
+            "description": "Projektujemy, kroimy i szyjemy odzież miarową na indywidualne zamówienie według wymiarów klienta"
         },
         {
-            "img": "../res/img/sections/services/3.png",
-            "title": "Usługa numer 3",
-            "description": "Opis usługi numer trzy!"
+            "img": "../res/img/sections/services/naprawa.svg",
+            "title": "Naprawa odzieży",
+            "description": "Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis."
         },
         {
-            "img": "../res/img/sections/services/4.png",
-            "title": "Usługa numer 4",
-            "description": "Opis usługi numer cztery!"
+            "img": "../res/img/sections/services/haft.svg",
+            "title": "Haft komputerowy",
+            "description": "Najpopularniejsza, najbardziej szlachetna, efektowna i trwała metoda zdobienia odzieży"
         },
         {
-            "img": "../res/img/sections/services/5.png",
-            "title": "Usługa numer 5",
-            "description": "Opis usługi numer pięć!"
+            "img": "../res/img/sections/services/znakowanie.svg",
+            "title": "Znakowanie odzieży",
+            "description": "Realizujemy wzory tekstowe, logotypy firm, emblematy, godła w technice haftu komputerowego"
         },
         {
-            "img": "../res/img/sections/services/6.png",
-            "title": "Usługa numer 6",
-            "description": "Opis usługi numer sześć!"
+            "img": "../res/img/sections/services/wyszywanie.svg",
+            "title": "Wyszywanie",
+            "description": "Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis."
         }
     ]
 }
