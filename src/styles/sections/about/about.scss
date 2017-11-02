@@ -1,7 +1,10 @@
+$about-section-padding-top: 40px;
+$about-section-padding-bottom: 80px;
+
 #about-section {
     @import "partials/header";
     @import "partials/description";
 
-    padding-top: 40px;
-    padding-bottom: 80px;
+    padding-top: $about-section-padding-top;
+    padding-bottom: $about-section-padding-bottom;
 }

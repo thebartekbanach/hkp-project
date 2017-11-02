@@ -1,19 +1,27 @@
+$about-description-xs-width: 11;
+$about-description-sm-width: 10;
+$about-description-md-width: 6;
+$about-description-lg-width: 5;
+$about-description-font-family: Lato-Light;
+$about-description-font-size: 1.3em;
+$about-description-font-size-on-mobile: 4.5vw;
+
 .about {
     display: block;
-    @include make-xs-col(11);
-    @include make-sm-col(10);
-    @include make-md-col(6);
-    @include make-lg-col(5);
+    @include make-xs-col($about-description-xs-width);
+    @include make-sm-col($about-description-sm-width);
+    @include make-md-col($about-description-md-width);
+    @include make-lg-col($about-description-lg-width);
 
+    // center container
     float: none;
-
     margin: 0 auto; 
     
-    font-family: Lato-Light;
-    font-size: 1.3em;
+    font-family: $about-description-font-family;
+    font-size: $about-description-font-size;
     text-align: center;
 
     @media (max-width: 550px) {
-        font-size: 4.5vw;
+        font-size: $about-description-font-size-on-mobile;
     }
 }

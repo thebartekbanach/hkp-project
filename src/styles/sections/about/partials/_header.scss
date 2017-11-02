@@ -1,14 +1,20 @@
+$about-header-color: rgb(197, 76, 130);
+$about-header-font-family: Lato-Regular;
+$about-header-font-size: 3em;
+$about-header-font-size-on-mobile: 8vw;
+$about-margin-beetwen-header-and-description:25px;
+
 .section-header {
     display: block;
     margin: 0 auto;
-    margin-bottom: 25px;
+    margin-bottom: $about-margin-beetwen-header-and-description;
 
     text-align: center;
-    font-size: 3em;
-    font-family: Lato-Regular;
-    color: rgb(197, 76, 130);
+    font-size: $about-header-font-size;
+    font-family: $about-header-font-family;
+    color: $about-header-color;
 
     @media (max-width: 550px) {
-        font-size: 8vw;
+        font-size: $about-header-font-size-on-mobile;
     }
 }
