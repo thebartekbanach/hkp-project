@@ -1,0 +1,32 @@
+$contact-info-xs-width: 11;
+$contact-info-sm-width: 10;
+$contact-info-md-width: 6;
+$contact-info-lg-width: 5;
+$contact-info-font-family: Lato-Light;
+$contact-info-font-color: white;
+$contact-info-font-size: 1.3em;
+$contact-info-font-size-on-mobile: 4.5vw;
+$contact-margin-beetwen-info-and-buttons: 25px;
+
+.contact-info {
+    display: block;
+    @include make-xs-col($contact-info-xs-width);
+    @include make-sm-col($contact-info-sm-width);
+    @include make-md-col($contact-info-md-width);
+    @include make-lg-col($contact-info-lg-width);
+
+    // center container
+    float: none;
+    margin: 0 auto; 
+    margin-bottom: $contact-margin-beetwen-info-and-buttons;
+    
+    font-family: $contact-info-font-family;
+    font-size: $contact-info-font-size;
+    text-align: center;
+    line-height: 1.5em;
+    color: $contact-info-font-color; 
+
+    @media (max-width: 550px) {
+        font-size: $contact-info-font-size-on-mobile;
+    }
+}

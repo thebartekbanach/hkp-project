@@ -1,0 +1,47 @@
+
+.contacts {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 0;
+    list-style-type: none;
+
+    .item{
+        display: inline-block;
+
+        .contact {
+            position: relative;
+            display: block;
+            margin: 5px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: transparentize($color: black, $amount: 0.8);
+            transition: background 0.3s;
+
+            // background image
+            .contain {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 60%;
+                height: 60%;
+
+                transition: width 0.3s, height 0.3s;
+            }
+
+            &:hover {
+                background: transparentize($color: black, $amount: 0.7);
+
+                .contain {
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+        }
+
+        
+    }
+}

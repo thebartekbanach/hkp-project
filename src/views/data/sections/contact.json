@@ -7,28 +7,28 @@
     ],
     "contactData": [
         {
-            "id": "id1",
-            "href": "#",
-            "description": "Zrób",
-            "img": "../res/img/sections/contact/1.svg"
+            "id": "telephone-button",
+            "href": "tel:324543654",
+            "description": "Zadzwoń do nas!",
+            "img": "../res/img/sections/contact/phone.svg"
         },
         {
-            "id": "id2",
-            "href": "#", 
-            "description": "Zrób",
-            "img": "../res/img/sections/contact/2.svg"
+            "id": "email-button",
+            "href": "email:nullpoint.studioo@gmail.com", 
+            "description": "Napisz do nas!",
+            "img": "../res/img/sections/contact/email.svg"
         },
         {
-            "id": "id3",
-            "href": "#",
-            "description": "Zrób",
-            "img": "../res/img/sections/contact/3.svg"
+            "id": "facebook-button",
+            "href": "https://facebook.com",
+            "description": "Znajdź nas na facebooku!",
+            "img": "../res/img/sections/contact/fb.svg"
         },
         {
-            "id": "id4",
-            "href": "#",
-            "description": "Zrób",
-            "img": "../res/img/sections/contact/4.svg"
+            "id": "map-button",
+            "href": "#find-us-on-map",
+            "description": "Znajdź naszą pracownię!",
+            "img": "../res/img/sections/contact/map.svg"
         }
     ]
 }

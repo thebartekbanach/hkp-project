@@ -2,20 +2,20 @@
 
 <section id="contact-section">
     <header class="section-header">{{ contactHeader }}</header>
-    <article class="contactInfo">
+    <article class="contact-info">
         {% for info in contactInfo %}
             {{ info }} <br />
         {% endfor %}
     </article>
-    <section class="contacts">
+    <ul class="contacts">
         {% for contact in contactData %}
-            <a class="contact" id="{{ contact.id }}" href="{{ contact.href }}" data-tooltip="{{ contact.description }}">
-                <div class="contact-icon">
-                    {{ img.cover(contact.img) }}
-                </div>
-            </a>
+            <li class="item">
+                <a class="contact" id="{{ contact.id }}" href="{{ contact.href }}" data-tooltip="{{ contact.description }}">
+                    {{ img.contain(contact.img) }}
+                </a>
+            </li>
         {% endfor %}    
-    </section>
+    </ul>
     <section class="map">
         <div class="google-map"></div>
     </section>

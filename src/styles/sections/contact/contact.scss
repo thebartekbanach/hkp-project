@@ -1,3 +1,10 @@
 #contact-section {
-    display: none;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: rgb(201, 45, 107);
+
+    @import "partials/header";
+    @import "partials/info";
+    @import "partials/contacts";
+    @import "partials/map";
 }

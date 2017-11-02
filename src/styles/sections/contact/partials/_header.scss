@@ -1,0 +1,20 @@
+$contact-header-color: white;
+$contact-header-font-family: Lato-Regular;
+$contact-header-font-size: 3em;
+$contact-header-font-size-on-mobile: 8vw;
+$contact-margin-beetwen-header-and-description: 25px;
+
+.section-header {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: $contact-margin-beetwen-header-and-description;
+
+    text-align: center;
+    font-size: $contact-header-font-size;
+    font-family: $contact-header-font-family;
+    color: $contact-header-color;
+
+    @media (max-width: 550px) {
+        font-size: $contact-header-font-size-on-mobile;
+    }
+}
