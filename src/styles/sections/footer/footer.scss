@@ -1,3 +1,41 @@
 footer {
-    display: none;
+    display: block;
+    padding: 10px 30px;
+    padding-top: 13px;
+    overflow: hidden;
+    background: rgb(83, 43, 117);
+    color: white;
+
+    font-family: Lato-Light;
+    letter-spacing: 1px;
+
+    .copyrights {
+        display: inline-block;
+        transform: translateY(6px);
+    }
+
+    .author {
+        float: right;
+        transform: translateY(-5px);
+
+        .heart-icon {
+            display: inline-block;
+            position: relative;
+            width: 25px;
+            height: 25px; 
+            transform: translateY(6px) translateX(-3px);
+        }
+    }
+
+    @media (max-width: 630px) {
+        .author {
+            display: none;
+        }
+        
+        .copyrights {
+            width: 100%;
+            text-align: center;
+            transform: none;
+        }
+    }
 }
