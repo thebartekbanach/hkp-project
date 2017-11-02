@@ -1,8 +1,8 @@
-$triangle-sharpness: 40px;
-$triangle-height: 50px;
-$triangle-part-width: 50%;
-$triangle-color: white;
-$triangle-zindex: 2;
+$welcome-triangle-sharpness: 40px;
+$welcome-triangle-height: 50px;
+$welcome-triangle-part-width: 50%;
+$welcome-triangle-color: white;
+$welcome-triangle-zindex: 2;
 
 &:before,  
 &:after { 
@@ -11,20 +11,20 @@ $triangle-zindex: 2;
     bottom: 0; 
     height: 0; 
     border-color: transparent; 
-    border-bottom: $triangle-height solid $triangle-color;   
-    width: calc(50% - #{$triangle-sharpness}); 
+    border-bottom: $welcome-triangle-height solid $welcome-triangle-color;   
+    width: calc(50% - #{$welcome-triangle-sharpness}); 
     border-style: solid; 
-    z-index: $triangle-zindex; 
+    z-index: $welcome-triangle-zindex; 
 } 
 
 &:before { 
-    border-right-width: $triangle-sharpness; 
+    border-right-width: $welcome-triangle-sharpness; 
     border-left-width: 0; 
     left: 0; 
 } 
 
 &:after { 
-    border-left-width: $triangle-sharpness; 
+    border-left-width: $welcome-triangle-sharpness; 
     border-right-width: 0; 
     right:0; 
 }
