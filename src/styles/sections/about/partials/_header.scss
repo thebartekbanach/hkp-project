@@ -1,0 +1,14 @@
+.section-header {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px;
+
+    text-align: center;
+    font-size: 3em;
+    font-family: Lato-Regular;
+    color: rgb(197, 76, 130);
+
+    @media (max-width: 550px) {
+        font-size: 8vw;
+    }
+}

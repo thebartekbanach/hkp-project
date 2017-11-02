@@ -1,0 +1,19 @@
+.about {
+    display: block;
+    @include make-xs-col(11);
+    @include make-sm-col(10);
+    @include make-md-col(6);
+    @include make-lg-col(5);
+
+    float: none;
+
+    margin: 0 auto; 
+    
+    font-family: Lato-Light;
+    font-size: 1.3em;
+    text-align: center;
+
+    @media (max-width: 550px) {
+        font-size: 4.5vw;
+    }
+}

@@ -1,3 +1,7 @@
 #about-section {
-    display: none;
+    @import "partials/header";
+    @import "partials/description";
+
+    padding-top: 40px;
+    padding-bottom: 80px;
 }
