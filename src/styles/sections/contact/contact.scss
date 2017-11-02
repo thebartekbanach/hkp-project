@@ -1,7 +1,11 @@
+$contact-section-padding-top: 40px;
+$contact-section-padding-bottom: 40px;
+$contact-section-background: rgb(201, 45, 107);
+
 #contact-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background: rgb(201, 45, 107);
+    padding-top: $contact-section-padding-top;
+    padding-bottom: $contact-section-padding-bottom;
+    background: $contact-section-background;
 
     @import "partials/header";
     @import "partials/info";
