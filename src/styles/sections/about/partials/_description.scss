@@ -20,6 +20,7 @@ $about-description-font-size-on-mobile: 4.5vw;
     font-family: $about-description-font-family;
     font-size: $about-description-font-size;
     text-align: center;
+    line-height: 1.5em;
 
     @media (max-width: 550px) {
         font-size: $about-description-font-size-on-mobile;
