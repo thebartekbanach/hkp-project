@@ -1,37 +1,55 @@
-.service {
-    @include make-xs-col(12);
-    @include make-sm-col(6);
-    @include make-md-col(4);
-    @include make-lg-col(4);
+$service-section-item-xs-width: 12;
+$service-section-item-sm-width: 6;
+$service-section-item-md-width: 4;
+$service-section-item-lg-width: 4;
+$service-section-item-min-height: 140px;
+$service-section-item-margin-bottom: 15px;
+$service-section-item-margin-bottom-on-mobile: 60px;
+$service-section-item-icon-position-top: 30px;
+$service-section-item-icon-position-on-mobile: 20px;
+$service-section-item-icon-position-on-ssmall-mobile: 30px;
+$service-section-item-icon-height: 40px;
+$service-section-item-icon-width: 2;
+$service-section-item-content-color: white;
+$service-section-item-content-width: 8;
+$service-section-item-content-width-on-mobile: 9;
+$service-section-item-content-title-font-family: Lato-Regular;
+$service-section-item-content-description-font-family: Lato-Light;
+$service-section-item-content-title-font-size: 1.3em;
+$service-section-item-content-margin-beetwen-title-and-description: 5px;
+$service-section-item-content-mobile-selector: "2n+1";
+$service-section-item-content-float-on-mobile: right;
 
-    min-height: 140px;
-    margin-bottom: 15px;
-    
-    overflow: hidden;
-    max-width: 100%;
-    @include clearfix();
-    display: block;
+.service {
+    @include make-xs-col($service-section-item-xs-width);
+    @include make-sm-col($service-section-item-sm-width);
+    @include make-md-col($service-section-item-md-width);
+    @include make-lg-col($service-section-item-lg-width);
+
+    min-height: $service-section-item-min-height;
+    margin-bottom: $service-section-item-margin-bottom;
 
     .service-icon {
-        @include make-xs-col(2);
+        @include make-xs-col($service-section-item-icon-width);
         position: relative;
-        top: 30px;
-        height: 40px;   
+        
+        top: $service-section-item-icon-position-top;
+        height: $service-section-item-icon-height;   
     }
 
     .service-content {
-        @include make-xs-col(8);
+        @include make-xs-col($service-section-item-content-width);
 
-        color: white;
+        color: $service-section-item-content-color;
         
         .service-title {
-            font-family: Lato-Regular;
-            font-size: 1.3em;
-            margin-bottom: 5px;
+            font-family: $service-section-item-content-title-font-family;
+            font-size: $service-section-item-content-title-font-size;
+            margin-bottom: $service-section-item-content-margin-beetwen-title-and-description;
         }
 
         .service-description {
-            font-family: Lato-Light;
+            font-family: $service-section-item-content-description-font-family;
         }
     }
 }
@@ -39,21 +57,21 @@
 @media (max-width: 767px) {
     .service {
         min-height: auto;
-        margin-bottom: 60px;
+        margin-bottom: $service-section-item-margin-bottom-on-mobile;
 
         .service-content {
-            @include make-xs-col(9);
+            @include make-xs-col($service-section-item-content-width-on-mobile);
         }
     }
 
-    .service:nth-child(2n+1) {
+    .service:nth-child(#{unquote($service-section-item-content-mobile-selector)}) {
         .service-icon,
         .service-content {
-            float: right;
+            float: $service-section-item-content-float-on-mobile;
         }
         
         .service-icon {
-            top: 20px;
+            top: $service-section-item-icon-position-on-mobile;
         }
     }
 }
@@ -61,7 +79,7 @@
 @media (max-width: 430px) {
     .service:nth-child(2n+1) {        
         .service-icon {
-            top: 30px;
+            top: $service-section-item-icon-position-on-ssmall-mobile;
         }
     }
 }

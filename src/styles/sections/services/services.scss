@@ -1,17 +1,19 @@
+$services-section-padding-top: 40px;
+$services-section-padding-bottom: 40px;
+$services-section-background: linear-gradient(to bottom right, #4b2778, #93278f);
+
 #services-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background: linear-gradient(to bottom right, #4b2778, #93278f); /* Standard syntax */
+    padding-top: $services-section-padding-top;
+    padding-bottom: $services-section-padding-bottom;
+    background: $services-section-background;
 
     @import "partials/header";
 
     .services {
         width: 90%;
-        @include clearfix();
         margin: 0 auto;
-        display: block;
-        padding-left: 0;
 
+        padding-left: 0; // remove ul styles
         list-style-type: none;
 
         @import "partials/service";
