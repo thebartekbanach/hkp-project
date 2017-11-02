@@ -1,0 +1,20 @@
+$realizations-header-color: #4b2778;
+$realizations-header-font-family: Lato-Regular;
+$realizations-header-font-size: 2.5em;
+$realizations-header-font-size-on-mobile: 7vw;
+$realizations-margin-beetwen-header-and-realizations: 50px;
+
+.section-header {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: $realizations-margin-beetwen-header-and-realizations;
+
+    text-align: center;
+    font-size: $realizations-header-font-size;
+    font-family: $realizations-header-font-family;
+    color: $realizations-header-color;
+
+    @media (max-width: 550px) {
+        font-size: $realizations-header-font-size-on-mobile;  
+    }
+}
