@@ -1,5 +1,5 @@
 {
-    "realiationsHeader": "Nasze realizacje",
+    "realizationsHeader": "Nasze realizacje",
     "realizationsData": [
         {
             "img": "../res/img/sections/realizations/1.png",
@@ -39,7 +39,17 @@
         {
             "img": "../res/img/sections/realizations/8.png",
             "title": "Realizacja numer 8",
-            "description": "Realizacja numer 8 jest najlepsza."
+            "description": "Realizacja numer 8 jest najlepsza." 
+        },
+        {
+            "img": "../res/img/sections/realizations/9.png",
+            "title": "Realizacja numer 9",
+            "description": "Realizacja numer 9 jest najlepsza."
+        },
+        {
+            "img": "../res/img/sections/realizations/10.png",
+            "title": "Realizacja numer 10",
+            "description": "Realizacja numer 10 jest najlepsza."
         }
     ]
 }
