@@ -1,12 +1,20 @@
+$footer-padding-top: 13px;
+$footer-padding-bottom: 10px;
+$footer-padding-left-right: 30px;
+$footer-background: rgb(83, 43, 117);
+$footer-font-color: white;
+$footer-font-family: Lato-Light;
+
 footer {
     display: block;
-    padding: 10px 30px;
-    padding-top: 13px;
+    padding: 0 $footer-padding-left-right;
+    padding-top: $footer-padding-top;
+    padding-bottom: $footer-padding-bottom;
     overflow: hidden;
-    background: rgb(83, 43, 117);
-    color: white;
+    background: $footer-background;
+    color: $footer-font-color;
 
-    font-family: Lato-Light;
+    font-family: $footer-font-family;
     letter-spacing: 1px;
 
     .copyrights {
