@@ -1,0 +1,14 @@
+{
+    "files": [
+        "src/scripts/main.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es2015",
+        "allowJs": true,
+        "baseUrl": "src/scripts",
+        "paths": {
+            "lib/*": [ "libs/*" ]
+        }
+    }
+}

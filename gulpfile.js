@@ -9,10 +9,14 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     nunjucks = require('gulp-nunjucks-render'),
-    babel = require('gulp-babel'),
     data = require('gulp-data'),
     htmlmin = require('gulp-htmlmin'),
-    fs = require("fs");
+    fs = require("fs"),
+    browserify = require('browserify'),
+    tsify = require('tsify'),
+    source = require('vinyl-source-stream'),
+    sourcemaps = require('gulp-sourcemaps'),
+    buffer = require('vinyl-buffer');
 
 function read_and_merge_data_from(path, dataObj){
     var files = fs.readdirSync(path);
@@ -61,14 +65,24 @@ gulp.task("clean:all", ["clean:js", "clean:css", "clean:views", "clean:resources
 
 // build
 gulp.task("build:js", function () {
-    gulp
-        .src("src/scripts/script.js")
-        .pipe(babel({presets: ['es2015']}))
-        .pipe(rename("site.js"))
-        .pipe(gulp.dest("dist/scripts/"))
-        .pipe(uglify())
-        .pipe(rename("site.min.js"))
-        .pipe(gulp.dest("dist/scripts/"))
+    return browserify({
+        basedir: '.',
+        debug: true,
+        entries: ['src/scripts/main.ts'],
+        cache: {},
+        packageCache: {}
+    })
+    .plugin(tsify)
+    .transform('babelify', {
+        presets: ['es2015'],
+        extensions: ['.ts']
+    })
+    .bundle()
+    .pipe(source('site.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task("build:css", function () {
