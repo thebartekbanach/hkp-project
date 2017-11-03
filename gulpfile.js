@@ -44,31 +44,31 @@ function read_and_merge_data(){
 }
 
 // clean
-gulp.task("clean:js", function (cb) {
-    rimraf("dist/scripts/**/*.js", cb);
+gulp.task("clean:ts", function (cb) {
+    rimraf("dist/scripts/**/*", cb);
 });
 
-gulp.task("clean:css", function (cb) {
-    rimraf("dist/styles/**/*.css", cb);
+gulp.task("clean:sass", function (cb) {
+    rimraf("dist/styles/**/*", cb);
 });
 
 gulp.task("clean:views", function (cb) {
-    rimraf("dist/views/**/*.html", cb);
+    rimraf("dist/views/**/*", cb);
 });
 
-gulp.task("clean:resources", function(cb) {
-    rimraf("dist/resources/**/*", cb);
+gulp.task("clean:res", function(cb) {
+    rimraf("dist/res/**/*", cb);
 });
 
-gulp.task("clean:simple", ["clean:js", "clean:css", "clean:views"]);
-gulp.task("clean:all", ["clean:js", "clean:css", "clean:views", "clean:resources"]);
+gulp.task("clean", ["clean:ts", "clean:sass", "clean:views", "clean:res"]);
 
 // build
-gulp.task("build:js", function () {
+gulp.task("build:ts", function () {
+    gulp.start("clean:ts");
     return browserify({
-        basedir: '.',
+        basedir: './src/scripts',
         debug: true,
-        entries: ['src/scripts/main.ts'],
+        entries: ['main.ts'],
         cache: {},
         packageCache: {}
     })
@@ -85,7 +85,8 @@ gulp.task("build:js", function () {
     .pipe(gulp.dest('dist/scripts'));
 });
 
-gulp.task("build:css", function () {
+gulp.task("build:sass", function () {
+    gulp.start("clean:sass");
     gulp
         .src("src/styles/style.scss")
         .pipe(sass().on('error', sass.logError))
@@ -96,7 +97,8 @@ gulp.task("build:css", function () {
         .pipe(gulp.dest("dist/styles/"));
 });
 
-gulp.task('build:html', function () {
+gulp.task('build:views', function () {
+    gulp.start("clean:views");
     gulp
         .src('src/views/index.nunjucks')
         .pipe(data(function() {
@@ -109,33 +111,33 @@ gulp.task('build:html', function () {
         .pipe(gulp.dest('dist/views/'));
 });
 
-gulp.task('build:resources', function() {
+gulp.task('build:res', function() {
+    //gulp.start("clean:res");
     gulp
         .src('src/resources/**/*')
         .pipe(gulp.dest('dist/res/'));
 })
 
-gulp.task("build:simple", ["build:js", "build:css", "build:html", "build:resources"]);
-gulp.task("build:all", ["build:js", "build:css", "build:html", "build:resources"]);
+gulp.task("build", ["build:ts", "build:sass", "build:views", "build:res"]);
 
 // watch
-gulp.task('watch:css', function () {
-    gulp.watch('src/styles/**/*.scss', ['build:css']);
+gulp.task('watch:sass', function () {
+    gulp.watch('src/styles/**/*', ['build:sass']);
 });
 
-gulp.task('watch:js', function () {
-    gulp.watch('src/scripts/**/*.js', ['build:js']);
+gulp.task('watch:ts', function () {
+    gulp.watch('src/scripts/**/*', ['build:ts']);
 });
 
-gulp.task('watch:html', function () {
-    gulp.watch('src/views/**/*', ['build:html']);
+gulp.task('watch:views', function () {
+    gulp.watch('src/views/**/*', ['build:views']);
 });
 
-gulp.task('watch:resources', function () {
-    gulp.watch('src/resources/**/*', ['build:resources']);
+gulp.task('watch:res', function () {
+    gulp.watch('src/resources/**/*', ['build:res']);
 });
 
 // watch
-gulp.task('watch:simple', ['watch:js', 'watch:css', 'watch:html']);
-gulp.task('watch:all', ['watch:js', 'watch:css', 'watch:html', 'watch:resources']);
+gulp.task('watch', ['watch:ts', 'watch:sass', 'watch:views', 'watch:res']);
 
+gulp.task('default', ['build', 'watch']);
