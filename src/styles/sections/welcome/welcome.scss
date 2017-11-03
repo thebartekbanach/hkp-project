@@ -9,4 +9,10 @@ $welcome-section-height: 90vh;
     @import "partials/navbar";
     @import "partials/header";
     @import "partials/triangle";
+
+    .cover {
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        transform: translate(-12px, -12px);
+    }
 }
