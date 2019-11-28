@@ -17,7 +17,10 @@ var gulp = require("gulp"),
     source = require("vinyl-source-stream"),
     sourcemaps = require("gulp-sourcemaps"),
     buffer = require("vinyl-buffer"),
-    liveServer = require("live-server");
+    liveServer = require("live-server"),
+    localtunnel = require("localtunnel"),
+    openBrowser = require("open"),
+    chalk = require("chalk");
 
 function read_and_merge_data_from(path, dataObj){
     var files = fs.readdirSync(path);
@@ -137,23 +140,69 @@ gulp.task("watch:res", function () {
 
 gulp.task("watch", gulp.parallel(["watch:ts", "watch:sass", "watch:views", "watch:res"]));
 
-gulp.task("run-live-server", function () {
+gulp.task("run:live-server", function () {
     const params = {
-        port: 8080, // Set the server port. Defaults to 8080.
-        host: "127.0.0.1", // Set the address to bind to. Defaults to 0.0.0.0 or process.env.IP.
-        root: "./dist", // Set root directory that's being served. Defaults to cwd.
-        file: "./views/index.html", // When set, serve this file (server root relative) for every 404 (useful for single-page applications)
-        open: true, // When false, it won't load your browser by default.
-        wait: 500, // Waits for all changes, before reloading. Defaults to 0 sec.
-        logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
+        port: 8080,
+        host: "127.0.0.1",
+        root: "./dist",
+        file: "./views/index.html",
+        wait: 1000,
+        logLevel: 0,
     };
 
     liveServer.start(params);
+
+    console.log(chalk.greenBright("Live server available under: ") + chalk.bgGreen(chalk.black(" http://localhost:8080 ")))
 });
 
+function createLocaltunnelConnection(port, approachNumber = 0) {
+    if (approachNumber > 10) {
+        console.error(chalk.red("Maximum number of localtunnel tunnel creation approaches exceeded!"));
+        process.exit();
+    }
+
+    localtunnel({ port }).then(function (tunnel) {
+        tunnel.url = tunnel.url.replace("https", "http");
+
+        console.log(approachNumber == 0
+            ? (chalk.greenBright("Shared under: ") + chalk.bgGreen(chalk.black(" " + tunnel.url + " ")))
+            : (chalk.yellowBright("Reshared under: ") + chalk.bgYellowBright(chalk.black(" " + tunnel.url + " "))));
+
+        openBrowser(tunnel.url);
+
+        tunnel.on("close", function () {
+            console.error(chalk.red("Localtunnel connection " + (approachNumber + 1) + " lost"));
+            createLocaltunnelConnection(port, approachNumber + 1)
+        });
+    });
+}
+
+gulp.task("run:sharing", function () {
+    createLocaltunnelConnection(8080);
+});
+
+gulp.task("run:browser-local", function () {
+    openBrowser("http://localhost:8080");
+});
+
+gulp.task("share", 
+    gulp.series([
+        "build",
+        gulp.parallel([
+            "watch",
+            "run:live-server",
+            "run:sharing"
+        ])
+    ])
+);
+
 gulp.task("default",
-    gulp.parallel([
-        gulp.series(["build", "watch"]),
-        "run-live-server"
+    gulp.series([
+        "build",
+        gulp.parallel([
+            "watch",
+            "run:live-server",
+            "run:browser-local"
+        ])
     ])
 );
