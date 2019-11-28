@@ -16,12 +16,14 @@ var gulp = require("gulp"),
     tsify = require("tsify"),
     source = require("vinyl-source-stream"),
     sourcemaps = require("gulp-sourcemaps"),
-    buffer = require("vinyl-buffer");
+    buffer = require("vinyl-buffer"),
+    liveServer = require("live-server");
 
 function read_and_merge_data_from(path, dataObj){
     var files = fs.readdirSync(path);
 
     for(var i = 0; i < files.length; ++i){
+        delete require.cache[require.resolve(path + files[i])];
         Object.assign(dataObj, require(path + files[i]));
     }
 
@@ -63,7 +65,7 @@ gulp.task("clean:res", function(cb) {
 gulp.task("clean", gulp.parallel(["clean:ts", "clean:sass", "clean:views", "clean:res"]));
 
 // build
-gulp.task("build:ts", gulp.series("clean:ts"), function () {
+gulp.task("build:ts", gulp.series("clean:ts", function build_ts() {
     return browserify({
         basedir: "./src/scripts",
         debug: true,
@@ -82,21 +84,21 @@ gulp.task("build:ts", gulp.series("clean:ts"), function () {
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest("dist/scripts"));
-});
+}));
 
-gulp.task("build:sass", gulp.series("clean:sass"), function () {
-    gulp
-        .src("src/styles/style.scss")
+gulp.task("build:sass", gulp.series("clean:sass", function build_sass() {
+    return gulp
+        .src("./src/styles/style.scss")
         .pipe(sass().on("error", sass.logError))
         .pipe(rename("site.css"))
         .pipe(gulp.dest("dist/styles/"))
         .pipe(cssmin())
         .pipe(rename("site.min.css"))
         .pipe(gulp.dest("dist/styles/"));
-});
+}));
 
-gulp.task("build:views", gulp.series("clean:views"), function () {
-    gulp
+gulp.task("build:views", gulp.series("clean:views", function build_views() {
+    return gulp
         .src("src/views/index.nunjucks")
         .pipe(data(function() {
             return read_and_merge_data();
@@ -106,7 +108,7 @@ gulp.task("build:views", gulp.series("clean:views"), function () {
         }))
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest("dist/views/"));
-});
+}));
 
 gulp.task("build:res", function() {
     return gulp
@@ -133,7 +135,25 @@ gulp.task("watch:res", function () {
     gulp.watch("src/resources/**/*", gulp.series(["build:res"]));
 });
 
-// watch
 gulp.task("watch", gulp.parallel(["watch:ts", "watch:sass", "watch:views", "watch:res"]));
 
-gulp.task("default", gulp.series(["build", "watch"]));
+gulp.task("run-live-server", function () {
+    const params = {
+        port: 8080, // Set the server port. Defaults to 8080.
+        host: "127.0.0.1", // Set the address to bind to. Defaults to 0.0.0.0 or process.env.IP.
+        root: "./dist", // Set root directory that's being served. Defaults to cwd.
+        file: "./views/index.html", // When set, serve this file (server root relative) for every 404 (useful for single-page applications)
+        open: true, // When false, it won't load your browser by default.
+        wait: 500, // Waits for all changes, before reloading. Defaults to 0 sec.
+        logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
+    };
+
+    liveServer.start(params);
+});
+
+gulp.task("default",
+    gulp.parallel([
+        gulp.series(["build", "watch"]),
+        "run-live-server"
+    ])
+);
