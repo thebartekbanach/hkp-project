@@ -60,11 +60,10 @@ gulp.task("clean:res", function(cb) {
     rimraf("dist/res/**/*", cb);
 });
 
-gulp.task("clean", ["clean:ts", "clean:sass", "clean:views", "clean:res"]);
+gulp.task("clean", gulp.parallel(["clean:ts", "clean:sass", "clean:views", "clean:res"]));
 
 // build
-gulp.task("build:ts", function () {
-    gulp.start("clean:ts");
+gulp.task("build:ts", gulp.series("clean:ts"), function () {
     return browserify({
         basedir: './src/scripts',
         debug: true,
@@ -85,8 +84,7 @@ gulp.task("build:ts", function () {
     .pipe(gulp.dest('dist/scripts'));
 });
 
-gulp.task("build:sass", function () {
-    gulp.start("clean:sass");
+gulp.task("build:sass", gulp.series("clean:sass"), function () {
     gulp
         .src("src/styles/style.scss")
         .pipe(sass().on('error', sass.logError))
@@ -97,8 +95,7 @@ gulp.task("build:sass", function () {
         .pipe(gulp.dest("dist/styles/"));
 });
 
-gulp.task('build:views', function () {
-    gulp.start("clean:views");
+gulp.task('build:views', gulp.series("clean:views"), function () {
     gulp
         .src('src/views/index.nunjucks')
         .pipe(data(function() {
@@ -112,32 +109,31 @@ gulp.task('build:views', function () {
 });
 
 gulp.task('build:res', function() {
-    //gulp.start("clean:res");
-    gulp
+    return gulp
         .src('src/resources/**/*')
         .pipe(gulp.dest('dist/res/'));
 })
 
-gulp.task("build", ["build:ts", "build:sass", "build:views", "build:res"]);
+gulp.task("build", gulp.parallel(["build:ts", "build:sass", "build:views", "build:res"]));
 
 // watch
 gulp.task('watch:sass', function () {
-    gulp.watch('src/styles/**/*', ['build:sass']);
+    gulp.watch('src/styles/**/*', gulp.series(['build:sass']));
 });
 
 gulp.task('watch:ts', function () {
-    gulp.watch('src/scripts/**/*', ['build:ts']);
+    gulp.watch('src/scripts/**/*', gulp.series(['build:ts']));
 });
 
 gulp.task('watch:views', function () {
-    gulp.watch('src/views/**/*', ['build:views']);
+    gulp.watch('src/views/**/*', gulp.series(['build:views']));
 });
 
 gulp.task('watch:res', function () {
-    gulp.watch('src/resources/**/*', ['build:res']);
+    gulp.watch('src/resources/**/*', gulp.series(['build:res']));
 });
 
 // watch
-gulp.task('watch', ['watch:ts', 'watch:sass', 'watch:views', 'watch:res']);
+gulp.task('watch', gulp.parallel(['watch:ts', 'watch:sass', 'watch:views', 'watch:res']));
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', gulp.series(['build', 'watch']));
