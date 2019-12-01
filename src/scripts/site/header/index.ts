@@ -1,5 +1,5 @@
-const welcomeImage: HTMLElement = <HTMLElement>document.querySelector("#welcome-section .cover");
-const welcomeSection: HTMLElement = <HTMLElement>document.querySelector("#welcome-section"); 
+const welcomeImage: HTMLElement = document.querySelector("#welcome-section .cover") as HTMLElement;
+const welcomeSection: HTMLElement = document.querySelector("#welcome-section") as HTMLElement;
 
 function updateBlurValue() {
     let blurValue = 5 * (window.scrollY / welcomeSection.offsetHeight);
@@ -8,7 +8,7 @@ function updateBlurValue() {
     welcomeImage.style.filter = `blur(${blurValue}px)`;
 }
 
-export function Init() {
+export function InitHeader() {
     updateBlurValue();
     window.addEventListener("scroll", updateBlurValue);
 }

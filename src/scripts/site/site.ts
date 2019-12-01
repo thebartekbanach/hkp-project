@@ -1,5 +1,5 @@
-import * as Header from "./header/header"
+import { InitHeader } from "./header";
 
 export function Init() {
-    Header.Init();
+    InitHeader();
 }
