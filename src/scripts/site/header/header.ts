@@ -1,18 +1,14 @@
-import { ScrollMagic } from "../../libs/ScrollMagic";
+const welcomeImage: HTMLElement = <HTMLElement>document.querySelector("#welcome-section .cover");
+const welcomeSection: HTMLElement = <HTMLElement>document.querySelector("#welcome-section"); 
 
-var welcomeImage: HTMLElement = <HTMLElement>document.querySelector("#welcome-section .cover");
-var welcomeHeader: HTMLElement = <HTMLElement>document.querySelector("#welcome-section .welcome-header"); 
+function updateBlurValue() {
+    let blurValue = 5 * (window.scrollY / welcomeSection.offsetHeight);
+    blurValue = blurValue > 5 ? 5 : blurValue;
 
-let controller: any = new ScrollMagic.Controller();
-let scene: any = new ScrollMagic.Scene({
-    triggerElement: "#welcome-section .welcome-image", 
-    loglevel: 3, duration: welcomeHeader.getBoundingClientRect().top});
-
-scene.addTo(controller)
-scene.on("progress", function (e: any) {
-    welcomeImage.style.filter = `blur(${5 * e.progress}px)`;
-});
+    welcomeImage.style.filter = `blur(${blurValue}px)`;
+}
 
 export function Init() {
-    console.log(welcomeHeader.getBoundingClientRect().top);
+    updateBlurValue();
+    window.addEventListener("scroll", updateBlurValue);
 }
