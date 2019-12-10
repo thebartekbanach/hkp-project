@@ -2,10 +2,16 @@
 
 <section id="realizations-section">
     <header class="section-header">{{ realizationsHeader }}</header>
+    <p class="click-to-see-more-subtitle">Kliknij na obrazek aby zobaczyć więcej</p>
     <ul class="realizations">
         {% for realization in realizationsData %}
-            <li class="realization" data-title="{{ realization.title }}" data-description="{{ realization.description }}">
-                {{ img.cover(realization.img) }}
+            <li class="realization"
+                data-original-image="{{ realization.img }}"
+                data-title="{{ realization.title }}"
+                data-description="{{ realization.description }}"
+                data-width="{{ realization.width }}"
+                data-height="{{ realization.height }}">
+                    {{ img.cover(realization.thumb, true) }}
             </li>
         {% endfor %}    
     </ul>

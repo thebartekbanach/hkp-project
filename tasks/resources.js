@@ -19,7 +19,7 @@ gulp.task("build:resources", async function() {
             fontType("woff"),
             fontType("woff2")
         ])
-        .pipe(gulp.dest("dist/res/fonts/"));
+        .pipe(gulp.dest("dist/res/fonts"));
 
     // minify and write all svg images
     await gulp
@@ -40,7 +40,15 @@ gulp.task("build:resources", async function() {
     await gulp
         .src("src/resources/img/sections/realizations/*.png")
         .pipe(transformImages(makeGalleryThumbnails(20)))
-        .pipe(gulp.dest("dist/res/img/sections/realizations/"));
+        .pipe(gulp.dest("dist/res/img/sections/realizations"));
+
+    await gulp
+        .src([
+            "node_modules/photoswipe/dist/default-skin/*.png",
+            "node_modules/photoswipe/dist/default-skin/*.svg",
+            "node_modules/photoswipe/dist/default-skin/*.gif",
+        ])
+        .pipe(gulp.dest("dist/res/img/photoswipe"));
 
 });
 

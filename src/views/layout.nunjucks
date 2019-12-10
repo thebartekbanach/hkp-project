@@ -1,6 +1,6 @@
 {# layout.nunjucks #}
 {% import 'macros/javascripts-include.nunjucks' as js %} 
-{% import 'macros/stylesheets-include.nunjucks' as css %} 
+{% import 'macros/stylesheets-include.nunjucks' as css %}
 
 <!DOCTYPE html>
 <html lang="{{site.lang}}">
@@ -15,7 +15,7 @@
     <main>
         {% block content %} {% endblock %}
     </main>
-    
+    {% include "partials/photoswipe.html" %} 
     {{ js.include(javascripts) }}
     {{ js.embed(embeddedJavascripts)}}
 </body>

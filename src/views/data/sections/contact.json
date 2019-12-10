@@ -1,20 +1,20 @@
 {
     "contactHeader": "Skontaktuj się!",
     "contactInfo": [
-        "Haft komputerowy Pisz",
-        "ul. Tęczowa 3a Pisz",
-        "Adrianna Nieostrudzka"
+        "Haft komputerowy HKP",
+        "ul. Tęczowa 3a Warszawa",
+        "Artur Nowak"
     ],
     "contactData": [
         {
             "id": "telephone-button",
-            "href": "tel:324543654",
+            "href": "tel:326543315",
             "description": "Zadzwoń do nas!",
             "img": "../res/img/sections/contact/phone.svg"
         },
         {
             "id": "email-button",
-            "href": "email:nullpoint.studioo@gmail.com", 
+            "href": "email:kontakt@gmail.com", 
             "description": "Napisz do nas!",
             "img": "../res/img/sections/contact/email.svg"
         },

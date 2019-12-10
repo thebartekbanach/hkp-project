@@ -7,5 +7,4 @@
     {% include "sections/services.nunjucks" %}
     {% include "sections/realizations.nunjucks" %}
     {% include "sections/contact.nunjucks" %}
-    {% include "sections/footer.nunjucks" %}
 {% endblock %} 

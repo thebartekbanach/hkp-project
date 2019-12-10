@@ -1,6 +1,6 @@
 {
     "stylesheets": [
-        "../styles/site.css"
+        "../styles/site.min.css"
     ],
     "embeddedStylesheets": [
         "embedded/styles/embedded.css"

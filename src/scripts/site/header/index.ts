@@ -8,7 +8,7 @@ function updateBlurValue() {
     welcomeImage.style.filter = `blur(${blurValue}px)`;
 }
 
-export function InitHeader() {
+export function initHeader() {
     updateBlurValue();
     window.addEventListener("scroll", updateBlurValue);
 }

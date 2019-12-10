@@ -13,7 +13,9 @@ gulp.task("clean:styles", function (cb) {
 gulp.task("build:styles", gulp.series("clean:styles", function build_styles() {
     return gulp
         .src("./src/styles/style.scss")
-        .pipe(sass().on("error", sass.logError))
+        .pipe(sass({ includePaths: [
+            "node_modules", "src/styles", "."
+        ]}).on("error", sass.logError))
         .pipe(rename("site.css"))
         .pipe(gulp.dest("dist/styles/"))
         .pipe(cssmin())

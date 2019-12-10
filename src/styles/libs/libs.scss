@@ -1,4 +1,9 @@
 @import "normalize/normalize";
 @import "image/image"; 
 @import "grid/grid"; 
-@import "clearfix/clearfix"; 
+@import "clearfix/clearfix";
+
+$pswp__assets-path: "/res/img/photoswipe/";
+
+@import "photoswipe/src/css/main";
+@import "photoswipe/src/css/default-skin/default-skin";

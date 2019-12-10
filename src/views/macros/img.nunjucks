@@ -1,7 +1,7 @@
-{% macro cover(src) %}
-    <img class="cover" src="{{src}}" />
+{% macro cover(src, lazyLoad = false) %}
+    <img class="cover" {% if not lazyLoad %} src="{{src}}" {% else %} data-lazy-src="{{src}}" {% endif %} />
 {% endmacro %}
 
-{% macro contain(src) %}
-    <img class="contain" src="{{src}}" />
+{% macro contain(src, lazyLoad = false) %}
+    <img class="contain"  {% if not lazyLoad %} src="{{src}}" {% else %} data-lazy-src="{{src}}" {% endif %}  />
 {% endmacro %}
