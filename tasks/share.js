@@ -9,7 +9,9 @@ function createLocaltunnelConnection(port, approachNumber = 0) {
         process.exit();
     }
 
-    localtunnel({ port }).then(function (tunnel) {
+    localtunnel({ port })
+    
+    .then(function (tunnel) {
         tunnel.url = tunnel.url.replace("https", "http");
 
         console.log(approachNumber == 0
@@ -22,9 +24,14 @@ function createLocaltunnelConnection(port, approachNumber = 0) {
             console.error(chalk.red("Localtunnel connection " + (approachNumber + 1) + " lost"));
             createLocaltunnelConnection(port, approachNumber + 1)
         });
+    })
+    
+    .catch((error) => {
+        console.error(chalk.red("Localtunnel error: " + error));
     });
 }
 
 gulp.task("run:sharing", function () {
+    console.log(chalk.yellowBright("Creating localtunnel connection..."));
     createLocaltunnelConnection(8080);
 });
