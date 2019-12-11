@@ -4,7 +4,7 @@ import open from "open";
 
 export const browserSync = sync.create();
 
-gulp.task("run:sync-server", () => {
+gulp.task("run:sync-server", (done) => {
     browserSync.init({
         port: 8080,
         server: {
@@ -13,12 +13,15 @@ gulp.task("run:sync-server", () => {
         },
         open: false
     });
+
+    done();
 });
 
 gulp.task("run:open-browser", () => {
-    open("http://localhost:8080");
+    return open("http://localhost:8080");
 });
 
-gulp.task("run:reload-browser", () => {
+gulp.task("run:reload-browser", (done) => {
     browserSync.reload();
+    done();
 });
