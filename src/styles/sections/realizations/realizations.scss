@@ -1,22 +1,9 @@
 #realizations-section {
-    padding-top: 50px;
-    padding-bottom: 40px;
+    padding-top: 70px;
+    padding-bottom: 80px;
 
     @import "partials/header";
-
-    .section-header {
-        margin-bottom: 5px;
-    }
-
-    .click-to-see-more-subtitle {
-        display: block;
-        width: 100%;
-        margin-bottom: 50px;
-        color: #4b2778;
-        font-size: medium;
-        font-family: Lato-Regular;
-        text-align: center;
-    }
+    @import "partials/subtitle";
 
     .realizations {
         display: block;

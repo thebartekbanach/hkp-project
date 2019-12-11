@@ -1,0 +1,11 @@
+$margin-between-subtitle-and-gallery: 50px;
+    
+.click-to-see-more-subtitle {
+    display: block;
+    width: 100%;
+    margin-bottom: $margin-between-subtitle-and-gallery;
+    color: #4b2778;
+    font-size: medium;
+    font-family: Lato-Regular;
+    text-align: center;
+}

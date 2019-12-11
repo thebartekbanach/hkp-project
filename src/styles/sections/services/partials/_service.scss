@@ -2,22 +2,17 @@ $service-section-item-xs-width: 12;
 $service-section-item-sm-width: 6;
 $service-section-item-md-width: 4;
 $service-section-item-lg-width: 4;
-$service-section-item-min-height: 140px;
-$service-section-item-margin-bottom: 15px;
+$service-section-item-margin-bottom: 50px;
 $service-section-item-margin-bottom-on-mobile: 60px;
-$service-section-item-icon-position-top: 30px;
-$service-section-item-icon-position-on-mobile: 20px;
 $service-section-item-icon-position-on-ssmall-mobile: 30px;
 $service-section-item-icon-height: 40px;
-$service-section-item-icon-width: 2;
 $service-section-item-content-color: white;
-$service-section-item-content-width: 8;
 $service-section-item-content-width-on-mobile: 9;
 $service-section-item-content-title-font-family: Lato-Regular;
 $service-section-item-content-description-font-family: Lato-Light;
-$service-section-item-content-title-font-size: 1.3em;
+$service-section-item-content-title-font-size: 1.5em;
 $service-section-item-content-margin-beetwen-title-and-description: 5px;
-$service-section-item-content-mobile-selector: "2n+1";
+$service-section-item-content-mobile-selector: "2n";
 $service-section-item-content-float-on-mobile: right;
 
 .service {
@@ -26,20 +21,21 @@ $service-section-item-content-float-on-mobile: right;
     @include make-md-col($service-section-item-md-width);
     @include make-lg-col($service-section-item-lg-width);
 
-    min-height: $service-section-item-min-height;
+    display: flex;
+    flex-direction: column;
     margin-bottom: $service-section-item-margin-bottom;
 
     .service-icon {
-        @include make-xs-col($service-section-item-icon-width);
-        position: relative;
-        
-        top: $service-section-item-icon-position-top;
+        position: absolute;
+        left: 20px;
+        top: calc(50% - 30px);
+        width: $service-section-item-icon-height;   
         height: $service-section-item-icon-height;   
     }
 
     .service-content {
-        @include make-xs-col($service-section-item-content-width);
-
+        margin-left: 80px;
+        padding-right: 30px;
         color: $service-section-item-content-color;
         
         .service-title {
@@ -50,13 +46,14 @@ $service-section-item-content-float-on-mobile: right;
 
         .service-description {
             font-family: $service-section-item-content-description-font-family;
+            font-size: 1.2em;
+            line-height: 1.3em;
         }
     }
 }
 
 @media (max-width: 767px) {
     .service {
-        min-height: auto;
         margin-bottom: $service-section-item-margin-bottom-on-mobile;
 
         .service-content {
@@ -65,21 +62,23 @@ $service-section-item-content-float-on-mobile: right;
     }
 
     .service:nth-child(#{unquote($service-section-item-content-mobile-selector)}) {
-        .service-icon,
-        .service-content {
-            float: $service-section-item-content-float-on-mobile;
-        }
-        
         .service-icon {
-            top: $service-section-item-icon-position-on-mobile;
+            left: auto;
+            right: 30px;
+        }
+
+        .service-content {
+            margin-left: 40px;
+            padding-right: 40px;
         }
     }
 }
 
-@media (max-width: 430px) {
-    .service:nth-child(2n+1) {        
-        .service-icon {
-            top: $service-section-item-icon-position-on-ssmall-mobile;
+@media (max-width: 400px) {
+    .service:nth-child(#{unquote($service-section-item-content-mobile-selector)}) {
+        .service-content {
+            margin-left: 0px;
+            padding-right: 20px;
         }
     }
 }

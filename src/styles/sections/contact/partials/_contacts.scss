@@ -1,9 +1,9 @@
 $contact-section-item-size: 60px;
-$contact-section-item-margin: 5px;
+$contact-section-item-margin: 15px;
 $contact-section-item-background: transparentize($color: black, $amount: 0.8);
 $contact-section-item-background-on-hover: transparentize($color: black, $amount: 0.7);
 $contact-section-item-icon-size: 60%;
-$contact-section-item-icon-size-on-hover: 65%;
+$contact-section-item-icon-size-on-hover: 70%;
 $contact-section-item-transform-on-click: 0.95;
 
 .contacts {
@@ -14,7 +14,7 @@ $contact-section-item-transform-on-click: 0.95;
     padding-left: 0;
     list-style-type: none;
 
-    .item{
+    .item {
         display: inline-block;
         transition: transform 0.3s;
 
@@ -27,25 +27,24 @@ $contact-section-item-transform-on-click: 0.95;
             border-radius: 50%;
             overflow: hidden;
             background: $contact-section-item-background;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
 
             // background image
             .contain {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: $contact-section-item-icon-size;
-                height: $contact-section-item-icon-size;
-
-                transition: width 0.3s, height 0.3s;
+                width: 60%;
+                height: 60%;
+                transition: transform 0.3s;
             }
 
             &:hover {
                 background: $contact-section-item-background-on-hover;
+                transform: scale(1.2);
 
                 .contain {
-                    width: $contact-section-item-icon-size-on-hover;
-                    height: $contact-section-item-icon-size-on-hover;
+                    transform: translate(-50%, -50%) scale(0.8);
                 }
             }
         }

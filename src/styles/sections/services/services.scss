@@ -1,5 +1,5 @@
-$services-section-padding-top: 40px;
-$services-section-padding-bottom: 40px;
+$services-section-padding-top: 70px;
+$services-section-padding-bottom: 50px;
 $services-section-background: linear-gradient(to bottom right, #4b2778, #93278f);
 
 #services-section {
@@ -10,6 +10,8 @@ $services-section-background: linear-gradient(to bottom right, #4b2778, #93278f)
     @import "partials/header";
 
     .services {
+        display: flex;
+        flex-wrap: wrap;
         width: 90%;
         margin: 0 auto;
 
