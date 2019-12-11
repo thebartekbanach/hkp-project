@@ -14,7 +14,7 @@
         },
         {
             "id": "email-button",
-            "href": "email:kontakt@gmail.com", 
+            "href": "mailto:kontakt@gmail.com", 
             "description": "Napisz do nas!",
             "img": "../res/img/sections/contact/email.svg"
         },
