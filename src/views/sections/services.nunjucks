@@ -1,6 +1,6 @@
 {% import "macros/img.nunjucks" as img %}
 
-<section id="services-section">
+<section id="uslugi">
     <header class="section-header">{{servicesHeader}}</header>
     <ul class="services">
         {% for service in servicesData %}

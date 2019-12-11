@@ -1,10 +1,11 @@
 {
     "navbarItems": [
-        { "name": "Usługi", "sectionId": "#services"},
-        { "name": "Realizacje", "sectionId": "#realizations"},
-        { "name": "Kontakt", "sectionId": "#contact"}
+        { "name": "O nas", "sectionId": "#o-nas"},
+        { "name": "Usługi", "sectionId": "#uslugi"},
+        { "name": "Realizacje", "sectionId": "#realizacje"},
+        { "name": "Kontakt", "sectionId": "#kontakt"}
     ],
     "navbarLogo": "../res/img/sections/welcome/logo.svg", 
     "welcomeBackground": "../res/img/sections/welcome/background.jpg", 
-    "welcomeHeader": "ZygZak Hafty Komputerowe"
+    "welcomeHeader": "ZygZag Hafty Komputerowe"
 }

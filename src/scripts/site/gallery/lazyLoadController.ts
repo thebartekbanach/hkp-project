@@ -55,7 +55,7 @@ export class LazyLoadController {
     }
 
     private onResize = () => {
-        const section = document.getElementById("realizations-section");
+        const section = document.getElementById("realizacje");
         this.galleryPosition = section.getBoundingClientRect();
     }
 }

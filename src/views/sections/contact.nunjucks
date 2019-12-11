@@ -1,6 +1,6 @@
 {% import "macros/img.nunjucks" as img %}
 
-<section id="contact-section">
+<section id="kontakt">
     <header class="section-header">{{ contactHeader }}</header>
     <article class="contact-info">
         {% for info in contactInfo %}

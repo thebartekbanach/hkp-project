@@ -9,7 +9,7 @@
     {# Navbar items #}
     <ul class="items">
         {% for item in navbarItems %}
-            <li class="item" ><a href="{{item.sectionId}}">{{item.name}}</a></li>
+            <li class="item"><a href="{{item.sectionId}}">{{item.name}}</a></li>
         {% endfor %}
     </ul>
 </nav>
