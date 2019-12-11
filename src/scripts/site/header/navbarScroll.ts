@@ -1,5 +1,4 @@
 function scrollInto(sectionId: string, event: Event) {
-    console.log(event);
     const section = document.querySelector<HTMLElement>(sectionId);
     const position = section.getBoundingClientRect();
 
@@ -16,6 +15,7 @@ function scrollInto(sectionId: string, event: Event) {
         });
     }
 
+    window.history.pushState(null, document.title, sectionId);
     event.preventDefault();
 }
 
