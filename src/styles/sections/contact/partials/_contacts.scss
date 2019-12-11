@@ -15,13 +15,15 @@ $contact-section-item-transform-on-click: 0.95;
     list-style-type: none;
 
     .item {
+        position: relative;
         display: inline-block;
+        margin: $contact-section-item-margin;
         transition: transform 0.3s;
+        border-radius: 50%;
 
         .contact {
             position: relative;
             display: block;
-            margin: $contact-section-item-margin;
             width: $contact-section-item-size;
             height: $contact-section-item-size;
             border-radius: 50%;
@@ -38,8 +40,47 @@ $contact-section-item-transform-on-click: 0.95;
                 height: 60%;
                 transition: transform 0.3s;
             }
+        }
 
-            &:hover {
+        .tooltip {
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 100%;
+            padding: 15px 25px;
+            transform: translateX(-50%);
+            border-radius: 25px;
+            background: whitesmoke;
+            color: black;
+            white-space: nowrap;
+            font-family: Lato-Medium;
+            text-decoration: none;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -5px;
+                left: calc(50% - 7.5px);
+                width: 16px;
+                height: 16px;
+                transform: rotate(45deg);
+                background: whitesmoke;
+            }
+        }
+
+        &:hover {
+            border-bottom-left-radius: initial;
+            border-bottom-right-radius: initial;
+
+            .tooltip {
+                opacity: 1;
+                pointer-events: visible;
+            }
+
+            .contact {
                 background: $contact-section-item-background-on-hover;
                 transform: scale(1.2);
 

@@ -9,19 +9,19 @@
         {
             "id": "telephone-button",
             "href": "tel:326543315",
-            "description": "Zadzwoń do nas!",
+            "description": "326543315",
             "img": "../res/img/sections/contact/phone.svg"
         },
         {
             "id": "email-button",
             "href": "mailto:kontakt@gmail.com", 
-            "description": "Napisz do nas!",
+            "description": "kontakt@gmail.com",
             "img": "../res/img/sections/contact/email.svg"
         },
         {
             "id": "facebook-button",
             "href": "https://facebook.com",
-            "description": "Znajdź nas na facebooku!",
+            "description": "Polub nas na facebooku!",
             "img": "../res/img/sections/contact/fb.svg"
         },
         {

@@ -9,9 +9,12 @@
     </article>
     <ul class="contacts">
         {% for contact in contactData %}
-            <li class="item">
-                <a class="contact" id="{{ contact.id }}" href="{{ contact.href }}" data-tooltip="{{ contact.description }}">
+            <li class="item"id="{{ contact.id }}">
+                <a class="contact" href="{{ contact.href }}">
                     {{ img.contain(contact.img) }}
+                </a>
+                <a class="tooltip" href="{{ contact.href }}">
+                    {{ contact.description }}
                 </a>
             </li>
         {% endfor %}    
