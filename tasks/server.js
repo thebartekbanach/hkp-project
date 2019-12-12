@@ -34,7 +34,7 @@ function run_dev_server(done) {
 
     .on("crash", function() {
         console.error("Server has crashed!\n")
-        stream.emit("restart", 3);
+        application.emit("restart", 3);
     });
 
     done();
