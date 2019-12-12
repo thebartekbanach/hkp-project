@@ -5,6 +5,7 @@ import tsify from "tsify";
 import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
 import sourcemaps from "gulp-sourcemaps";
+import prettyError from "pretty-error";
 import { browserSync } from "./sync-server";
 
 // If false then reloads browser
@@ -31,6 +32,7 @@ gulp.task("build:scripts", gulp.series("clean:scripts", function build_scripts()
             extensions: [".ts"]
         })
         .bundle()
+        .on("error", (e) => console.error(new prettyError().render(e)))
         .pipe(source("site.js"))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
