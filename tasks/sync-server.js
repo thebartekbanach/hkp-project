@@ -11,7 +11,8 @@ gulp.task("run:sync-server", (done) => {
             baseDir: "./dist",
             index: "views/index.html"
         },
-        open: false
+        open: false,
+        cors: true
     });
 
     done();

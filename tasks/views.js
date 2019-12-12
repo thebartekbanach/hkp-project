@@ -24,5 +24,5 @@ gulp.task("build:views", gulp.series("clean:views", function build_views() {
 }));
 
 gulp.task("watch:views", function () {
-    gulp.watch("src/views/**/*", gulp.series(["build:views", "run:reload-browser"]));
+    return gulp.watch("src/views/**/*", gulp.series(["build:views", "run:reload-browser"]));
 });

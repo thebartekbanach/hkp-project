@@ -26,7 +26,7 @@ gulp.task("build:scripts", gulp.series("clean:scripts", function build_scripts()
             cache: {},
             packageCache: {}
         })
-        .plugin(tsify)
+        .plugin(tsify, require("../tsconfig.client.json").compilerOptions)
         .transform("babelify", {
             presets: ["@babel/preset-env"],
             extensions: [".ts"]
