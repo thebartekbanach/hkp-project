@@ -7,7 +7,7 @@ function updateBlurValue(welcomeImage: HTMLElement, welcomeSection: HTMLElement)
 }
 
 export function initBlur() {
-    const welcomeImage: HTMLElement = document.querySelector("#welcome-section .cover") as HTMLElement;
+    const welcomeImage: HTMLElement = document.querySelector("#welcome-section .background.normal") as HTMLElement;
     const welcomeSection: HTMLElement = document.querySelector("#welcome-section") as HTMLElement;
 
     const blurProcessor = updateBlurValue.bind(this, welcomeImage, welcomeSection);

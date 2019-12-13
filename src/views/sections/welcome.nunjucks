@@ -1,8 +1,8 @@
 {% import "macros/img.nunjucks" as img %}
 
 <section id="welcome-section">
-    {# Background image #}
-    {{ img.cover(welcomeBackground) }}
+    <img class="background normal hidden" />
+    <img class="background blurred hidden" />
 
     {# Navbar partial include #}
     {% include "partials/navbar.nunjucks" %}

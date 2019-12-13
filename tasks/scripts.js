@@ -6,6 +6,8 @@ import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
 import sourcemaps from "gulp-sourcemaps";
 import prettyError from "pretty-error";
+import dotenv from "dotenv";
+import envify from "envify/custom";
 import { browserSync } from "./sync-server";
 
 // If false then reloads browser
@@ -31,6 +33,7 @@ gulp.task("build:scripts", gulp.series("clean:scripts", function build_scripts()
             presets: ["@babel/preset-env"],
             extensions: [".ts"]
         })
+        .transform(envify(dotenv.config().parsed))
         .bundle()
         .on("error", (e) => console.error(new prettyError().render(e)))
         .pipe(source("site.js"))

@@ -12,6 +12,7 @@ $page-navigation-logo-margin-left: 30px;
     position: relative;
     padding-top: $page-navigation-padding-top;
     text-align: left;
+    z-index: 2;
 
     .logo {
         position: relative;

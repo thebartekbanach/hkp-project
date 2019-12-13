@@ -1,7 +1,10 @@
+import dotenv from "dotenv";
 import express from "express";
 import addWelcomeBackgroundCropper from "./welcomeBackgroundCropper";
 
-const PORT = process.env.PORT || 8081;
+dotenv.config();
+
+const PORT = process.env.API_SERVER_LISTENING_PORT || 8081;
 const app = express();
 
 app.get("/", (_, res) => {
