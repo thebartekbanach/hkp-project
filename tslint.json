@@ -4,6 +4,7 @@
         "tslint:recommended"
     ],
     "rules": {
-        "trailing-comma": false
+        "trailing-comma": false,
+        "ordered-imports": false
     }
 }
