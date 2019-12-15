@@ -1,7 +1,7 @@
-const getApiUrl = (request: string) => `${process.env.API_ENDPOINT}/welcome/${request}`;
+import { makeApiUrlFor } from "../../lib/api";
 
 function downloadFullBackground() {
-    const normalImageUrl = getApiUrl(`${window.screen.availWidth}/${window.screen.availHeight}`);
+    const normalImageUrl = makeApiUrlFor(`/welcome/${window.screen.availWidth}/${window.screen.availHeight}`);
 
     const loader = new Image();
 
@@ -25,8 +25,8 @@ export function startLoadingBackground() {
         : height / width;
 
     const placeholderUrl = width > height
-        ? getApiUrl(`${200 * aspectRatio}/200`)
-        : getApiUrl(`200/${200 * aspectRatio}`);
+        ? makeApiUrlFor(`/welcome/${200 * aspectRatio}/200`)
+        : makeApiUrlFor(`/welcome/200/${200 * aspectRatio}`);
 
     const loader = new Image();
 
