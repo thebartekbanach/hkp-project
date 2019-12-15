@@ -1,7 +1,7 @@
 $about-header-color: rgb(197, 76, 130);
 $about-header-font-family: Lato-Regular;
 $about-header-font-size: 3em;
-$about-header-font-size-on-mobile: 8vw;
+$about-header-font-size-on-mobile: 2.2em;
 $about-margin-beetwen-header-and-description: 30px;
 
 .section-header {
@@ -16,5 +16,6 @@ $about-margin-beetwen-header-and-description: 30px;
 
     @media (max-width: 550px) {
         font-size: $about-header-font-size-on-mobile;
+        padding: 0 10px;
     }
 }

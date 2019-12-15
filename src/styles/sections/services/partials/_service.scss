@@ -56,6 +56,10 @@ $service-section-item-content-float-on-mobile: right;
     .service {
         margin-bottom: $service-section-item-margin-bottom-on-mobile;
 
+        &:last-child {
+            margin-bottom: 15px;
+        }
+
         .service-content {
             @include make-xs-col($service-section-item-content-width-on-mobile);
         }
@@ -71,6 +75,10 @@ $service-section-item-content-float-on-mobile: right;
             margin-left: 40px;
             padding-right: 40px;
         }
+    }
+
+    .service .service-content {
+        font-size: 0.9em;
     }
 }
 

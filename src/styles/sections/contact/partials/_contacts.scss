@@ -93,5 +93,18 @@ $contact-section-item-transform-on-click: 0.95;
         &:active {
             transform: scale($contact-section-item-transform-on-click);
         }
+
+        @media (max-width: 550px) {
+            margin: $contact-section-item-margin - 5px;
+            
+            .contact {
+                width: $contact-section-item-size - 10px;
+                height: $contact-section-item-size - 10px;
+            }
+
+            .tooltip {
+                display: none;
+            }
+        }
     }
 }
