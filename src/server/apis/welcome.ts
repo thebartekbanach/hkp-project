@@ -1,10 +1,8 @@
 import { Express } from "express";
-import { stat } from "fs";
 import { resolve } from "path";
-import { promisify } from "util";
 import sharp from "sharp";
 
-const statAsync = promisify(stat);
+import { checkFileExists } from "../lib/checkFileExists";
 
 const welcomeBackgroundPath = "dist/res/img/sections/welcome/background.jpg";
 const croppedWelcomeBackgroundPath = "dist/res/img/sections/welcome";
@@ -28,15 +26,6 @@ async function cropWelcomeTo(width: number, height: number) {
         .toFile(getCroppedWelcomeBackgroundPath(width, height));
 }
 
-async function fileExists(path: string) {
-    try {
-        await statAsync(path);
-        return true;
-    } catch (_) {
-        return false;
-    }
-}
-
 export default function init(app: Express) {
     app.get("/welcome/:width/:height", async (req, res) => {
         let width: number = null;
@@ -45,7 +34,7 @@ export default function init(app: Express) {
         try {
             width = parseInt(req.params.width, 10);
             height = parseInt(req.params.height, 10);
-            
+
             if (width < 100 || height < 100) {
                 throw new Error("Size is too small");
             }
@@ -59,7 +48,7 @@ export default function init(app: Express) {
         width = maxSize.width >= width ? width : maxSize.width;
         height = maxSize.height >= height ? height : maxSize.height;
 
-        if (!await fileExists(getCroppedWelcomeBackgroundPath(width, height))) {
+        if (!await checkFileExists(getCroppedWelcomeBackgroundPath(width, height))) {
             await cropWelcomeTo(width, height);
         }
 

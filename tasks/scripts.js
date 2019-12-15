@@ -10,6 +10,8 @@ import dotenv from "dotenv";
 import envify from "envify/custom";
 import { browserSync } from "./sync-server";
 
+import { checkFileExists } from "./scripts/check-file-exists";
+
 // If false then reloads browser
 // after scripts change instead of
 // injecting new scripts into page.
@@ -21,6 +23,9 @@ gulp.task("clean:scripts", function (cb) {
 });
 
 gulp.task("build:scripts", gulp.series("clean:scripts", function build_scripts() {
+    const useDevDotenv = !checkFileExists("./.env");
+    const env = dotenv.config({ path: useDevDotenv ? "./.env.dev" : "./.env" }).parsed;
+
     const result = browserify({
             basedir: "./src/scripts",
             debug: true,
@@ -33,7 +38,7 @@ gulp.task("build:scripts", gulp.series("clean:scripts", function build_scripts()
             presets: ["@babel/preset-env"],
             extensions: [".ts"]
         })
-        .transform(envify(dotenv.config().parsed))
+        .transform(envify(env))
         .bundle()
         .on("error", (e) => console.error(new prettyError().render(e)))
         .pipe(source("site.js"))

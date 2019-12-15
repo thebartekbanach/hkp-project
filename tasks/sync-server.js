@@ -2,9 +2,10 @@ import gulp from "gulp";
 import sync from "browser-sync";
 import open from "open";
 import dotenv from "dotenv";
-import chalk from "chalk";
+import { checkFileExists } from "./scripts/check-file-exists";
 
-const { BROWSERSYNC_LISTENING_PORT } = dotenv.config().parsed;
+const useDevDotenv = !checkFileExists("./.env");
+const { BROWSERSYNC_LISTENING_PORT } = dotenv.config({ path: useDevDotenv ? "./.env.dev" : "./.env" }).parsed;
 
 export const browserSync = sync.create();
 

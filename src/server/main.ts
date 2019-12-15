@@ -1,19 +1,26 @@
-import dotenv from "dotenv";
+
 import express from "express";
-import addWelcomeBackgroundCropper from "./welcomeBackgroundCropper";
 
-dotenv.config();
+import { loadDotenv } from "./lib/loadDotenv";
 
-const PORT = process.env.API_SERVER_LISTENING_PORT || 8081;
-const app = express();
+import addHelloResponse from "./apis/hello";
+import addWelcomeBackgroundCropper from "./apis/welcome";
 
-app.get("/", (_, res) => {
-    res.send("Hello world!");
-});
+async function main() {
+    await loadDotenv();
 
-addWelcomeBackgroundCropper(app);
+    const PORT = process.env.API_SERVER_LISTENING_PORT || 8081;
+    const app = express();
 
-app.listen(PORT).on("listening", () => {
-    // tslint:disable-next-line: no-console
-    console.log("Server is listening on port " + PORT);
-});
+    addHelloResponse(app);
+    addWelcomeBackgroundCropper(app);
+
+    app.listen(PORT).on("listening", () => {
+        // tslint:disable-next-line: no-console
+        console.log("Server is listening on port " + PORT);
+    });
+}
+
+main()
+    .then(() => console.log("Application started correctly!"))
+    .catch((err) => console.error("Application error: ", err));

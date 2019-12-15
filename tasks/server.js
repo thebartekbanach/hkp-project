@@ -28,7 +28,6 @@ function run_dev_server(done) {
     application = nodemon({
         script: "dist/server/main.js",
         ignore: "**/*.*",
-        env: process.env,
         done
     })
 
