@@ -17,8 +17,7 @@ gulp.task("run:sync-server", (done) => {
             index: "views/index.html"
         },
         open: false,
-        cors: true,
-        plugins: ["browser-sync-logger"]
+        cors: true
     });
 
     done();
