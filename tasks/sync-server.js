@@ -2,10 +2,9 @@ import gulp from "gulp";
 import sync from "browser-sync";
 import open from "open";
 import dotenv from "dotenv";
-import { checkFileExists } from "./scripts/check-file-exists";
+import { getEnvironmentVariables } from "./scripts/get-environment-variables";
 
-const useDevDotenv = !checkFileExists("./.env");
-const { BROWSERSYNC_LISTENING_PORT } = dotenv.config({ path: useDevDotenv ? "./.env.dev" : "./.env" }).parsed;
+const { BROWSERSYNC_LISTENING_PORT } = getEnvironmentVariables();
 
 export const browserSync = sync.create();
 

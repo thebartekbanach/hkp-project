@@ -6,11 +6,9 @@ import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
 import sourcemaps from "gulp-sourcemaps";
 import prettyError from "pretty-error";
-import dotenv from "dotenv";
 import envify from "envify/custom";
 import { browserSync } from "./sync-server";
-
-import { checkFileExists } from "./scripts/check-file-exists";
+import { getEnvironmentVariables } from "./scripts/get-environment-variables"
 
 // If false then reloads browser
 // after scripts change instead of
@@ -23,9 +21,6 @@ gulp.task("clean:scripts", function (cb) {
 });
 
 gulp.task("build:scripts", gulp.series("clean:scripts", function build_scripts() {
-    const useDevDotenv = !checkFileExists("./.env");
-    const env = dotenv.config({ path: useDevDotenv ? "./.env.dev" : "./.env" }).parsed;
-
     const result = browserify({
             basedir: "./src/scripts",
             debug: true,
@@ -38,7 +33,7 @@ gulp.task("build:scripts", gulp.series("clean:scripts", function build_scripts()
             presets: ["@babel/preset-env"],
             extensions: [".ts"]
         })
-        .transform(envify(env))
+        .transform(envify(getEnvironmentVariables()))
         .bundle()
         .on("error", (e) => console.error(new prettyError().render(e)))
         .pipe(source("site.js"))
