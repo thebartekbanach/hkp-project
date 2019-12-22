@@ -1,4 +1,4 @@
-import gulp from "gulp";
+import { task, series, src, dest, watch } from "gulp";
 import rimraf from "rimraf";
 import ts from "gulp-typescript";
 import sourcemaps from "gulp-sourcemaps";
@@ -7,19 +7,19 @@ import nodemon from "gulp-nodemon";
 const serverProject = ts.createProject(require("../tsconfig.server.json").compilerOptions);
 let application = null;
 
-gulp.task("clean:server", function (cb) {
+task("clean:server", function (cb) {
     rimraf("dist/server/**/*", cb);
 });
 
-gulp.task("build:server", gulp.series("clean:server", function build_server() {
-    return gulp.src("src/server/**/*.ts")
+task("build:server", series("clean:server", function build_server() {
+    return src("src/server/**/*.ts")
         .pipe(sourcemaps.init())
         .pipe(serverProject())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest("dist/server/"));
+        .pipe(dest("dist/server/"));
 }));
 
-gulp.task("run:restart-server", function reload_server(done) {
+task("run:restart-server", function reload_server(done) {
     application.emit("restart");
     done();
 })
@@ -41,7 +41,7 @@ function run_dev_server(done) {
 }
 
 function watch_server() {
-    return gulp.watch("src/server/**/*.ts", gulp.series(["build:server", "run:restart-server"]));
+    return watch("src/server/**/*.ts", series(["build:server", "run:restart-server"]));
 }
 
-gulp.task("watch:server", gulp.series(run_dev_server, watch_server));
+task("watch:server", series(run_dev_server, watch_server));

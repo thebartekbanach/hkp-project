@@ -1,4 +1,4 @@
-import gulp from "gulp";
+import { task } from "gulp";
 import localtunnel from "localtunnel";
 import chalk from "chalk";
 import open from "open";
@@ -31,7 +31,7 @@ function createLocaltunnelConnection(port, approachNumber = 0) {
     });
 }
 
-gulp.task("run:sharing", function () {
+task("run:sharing", function () {
     console.log(chalk.yellowBright("Creating localtunnel connection..."));
     createLocaltunnelConnection(8080);
 });

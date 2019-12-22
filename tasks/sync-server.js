@@ -1,4 +1,4 @@
-import gulp from "gulp";
+import { task } from "gulp";
 import sync from "browser-sync";
 import open from "open";
 import dotenv from "dotenv";
@@ -8,7 +8,7 @@ const { BROWSERSYNC_LISTENING_PORT } = getEnvironmentVariables();
 
 export const browserSync = sync.create();
 
-gulp.task("run:sync-server", (done) => {
+task("run:sync-server", (done) => {
     browserSync.init({
         port: BROWSERSYNC_LISTENING_PORT,
         server: {
@@ -22,11 +22,11 @@ gulp.task("run:sync-server", (done) => {
     done();
 });
 
-gulp.task("run:open-browser", () => {
+task("run:open-browser", () => {
     return open("http://localhost:" + BROWSERSYNC_LISTENING_PORT);
 });
 
-gulp.task("run:reload-browser", (done) => {
+task("run:reload-browser", (done) => {
     browserSync.reload();
     done();
 });
