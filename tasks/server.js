@@ -40,8 +40,9 @@ function run_dev_server(done) {
     done();
 }
 
-function watch_server() {
-    return watch("src/server/**/*.ts", series(["build:server", "run:restart-server"]));
+function watch_server(done) {
+    watch("src/server/**/*.ts", series(["build:server", "run:restart-server"]));
+    done();
 }
 
 task("watch:server", series(run_dev_server, watch_server));

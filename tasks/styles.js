@@ -23,6 +23,7 @@ task("build:styles", series("clean:styles", function build_styles() {
         .pipe(browserSync.stream());
 }));
 
-task("watch:styles", function () {
+task("watch:styles", function (done) {
     watch("src/styles/**/*", series(["build:styles"]));
+    done();
 });

@@ -48,6 +48,7 @@ task("build:resources", async function() {
 });
 
 
-task("watch:resources", function () {
+task("watch:resources", function (done) {
     watch("src/resources/**/*", series(["build:resources", "run:reload-browser"]));
+    done();
 });

@@ -47,10 +47,12 @@ task("build:scripts", series("clean:scripts", function build_scripts() {
         : result;
 }));
 
-task("watch:scripts", function () {
+task("watch:scripts", function (done) {
     watch("src/scripts/**/*", series(
         STREAM_SCRIPTS
             ? ["build:scripts"]
             : ["build:scripts", "run:reload-browser"]
     ));
+
+    done();
 });

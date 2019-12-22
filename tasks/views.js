@@ -12,16 +12,15 @@ task("clean:views", function (cb) {
 
 task("build:views", series("clean:views", function build_views() {
     return src("src/views/index.nunjucks")
-        .pipe(data(function() {
-            return read_and_merge_data();
-        }))
+        .pipe(data(read_and_merge_data))
         .pipe(nunjucks({
             path: ["src/views"]
         }))
-        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest("dist/views/"));
 }));
 
-task("watch:views", function () {
-    return watch("src/views/**/*", series(["build:views", "run:reload-browser"]));
+task("watch:views", function (done) {
+    watch("src/views/**/*", series(["build:views", "run:reload-browser"]));
+    done();
 });
